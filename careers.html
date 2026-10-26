@@ -3,209 +3,292 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Careers · AAAMT</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <title>AAAMT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@14,500;14,700&family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css?v=resp1">
-  <link rel="stylesheet" href="css/about.css?v=resp1">
-  <link rel="stylesheet" href="css/careers.css?v=resp1">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@14,500;14,700&family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css?v=nemo1">
+  <link rel="stylesheet" href="css/chatbot.css?v=rag1">
+  <link rel="stylesheet" href="css/about.css?v=rfull1">
+  <link rel="stylesheet" href="css/careers.css?v=people7">
+  <link rel="stylesheet" href="css/responsive.css?v=bento620">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="logo" href="index.html"><img src="assets/images/logo-header.png" alt="AAAMT" width="53" height="52"></a>
+      <a class="logo" href="/"><img src="assets/images/logo-header.png" alt="AAAMT" width="53" height="52"></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
       <nav class="site-nav">
-        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="/">Home</a>
         <div class="nav-drop">
           <button class="nav-link nav-drop-btn" type="button" aria-expanded="false">Products <img src="assets/icons/chevron.svg" alt="" width="16" height="16"></button>
           <div class="nav-drop-panel">
             <div class="mega">
-              <a class="mega-card" href="https://instituterun.com/" target="_blank" rel="noopener noreferrer"><img src="assets/images/inst_product.png" alt="InstituteRun. Comprehensive Automation and Communication Tool for Colleges"></a>
-              <a class="mega-card" href="https://doqzy.com/" target="_blank" rel="noopener noreferrer"><img src="assets/images/Doqzy_prod.png" alt="Doqzy. Contract Lifecycle Management, Automated End-to-End"></a>
-              <a class="mega-note" href="about.html"><p>Purpose-built SaaS products for Indian enterprises</p><span>Learn more about AAAMT <img src="assets/icons/arrow-orange.svg" alt="" width="18" height="18"></span></a>
+              <a class="mega-card mega-product" href="https://instituterun.com/" target="_blank" rel="noopener noreferrer">
+                <img class="mega-product-logo" src="assets/icons/instituterun-mega.svg" alt="" width="35" height="48">
+                <h3>InstituteRun</h3>
+                <p>AI-Powered Automation &amp; Communication Platform for<br>Schools, Colleges &amp; Universities</p>
+              </a>
+              <a class="mega-card mega-product" href="https://doqzy.com/" target="_blank" rel="noopener noreferrer">
+                <img class="mega-doqzy-logo" src="assets/images/Dogzy.png" alt="" width="48" height="48">
+                <h3>Doqzy</h3>
+                <p>AI-Powered Contract Management for Legal, Procurement, Finance, Sales &amp; Operations Teams</p>
+              </a>
+              <div class="mega-note">
+                <div class="mega-note-copy">
+                  <strong>One Company.<br>A growing product portfolio</strong>
+                  <p>Discover the people, principles and ambition behind AAAMT..</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <a class="nav-link" href="about.html">About Us</a>
-        <a class="nav-link is-current" href="careers.html">Careers</a>
-        <a class="nav-link" href="contact.html">Contact Us</a>
-        <a class="btn btn-orange mobile-cta" href="contact.html">Get in Touch</a>
+        <a class="nav-link is-current" href="/careers">Careers</a>
+        <a class="nav-link" href="/contact">Contact Us</a>
+        <a class="btn btn-orange mobile-cta" href="/contact">Get in Touch</a>
       </nav>
-      <a class="btn btn-orange" href="contact.html">Get in Touch</a>
+      <a class="btn btn-orange" href="/contact">Get in Touch</a>
     </div>
   </header>
   <main>
     <section class="careers-hero">
       <div class="wrap careers-hero-grid">
         <div class="careers-hero-copy">
-          <p class="careers-badge"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path fill="currentColor" d="M6 0l1.2 3.6L11 4.2 8.2 6.6 9.2 11 6 8.8 2.8 11l1-4.4L1 4.2l3.8-.6L6 0z"/></svg> Careers at AAAMT</p>
-          <h1>Build products<br><span>people rely on</span></h1>
-          <p>At AAAMT, you'll work on software that supports real-world operations—from educational institutions to teams managing contracts. Join a team where you can learn, take ownership, and grow through meaningful work.</p>
+          <div class="careers-hero-text">
+            <p class="careers-badge"><img src="assets/icons/careers-rotate.svg" alt="" width="12" height="12"> Build your Careers at AAAMT</p>
+            <h1>Build products <span>Grow through ownership</span></h1>
+            <p class="careers-hero-msg">We're building a SaaS product company from India with global ambition. Join us to work on real customer problems, contribute across teams and develop your capabilities through purposeful work.</p>
+          </div>
           <div class="hero-actions">
-            <a class="btn btn-orange" href="#roles">View Open Roles <img src="assets/icons/arrow-right-white.svg" alt="" width="16" height="16"></a>
-            <a class="btn btn-white" href="#life">Explore Life at AAAMT</a>
+            <a class="btn btn-orange" href="#roles">View open roles <img src="assets/icons/arrow-cta.svg" alt="" width="16" height="16"></a>
+            <a class="btn btn-white" href="#life">Discover life at AAAMT</a>
           </div>
         </div>
         <div class="careers-hero-photo">
           <div class="careers-hero-crop">
-            <img src="assets/images/CARRIER_H_crop.jpg" alt="Authentic diverse Indian technology team of product designer, engineer and product">
+            <img src="assets/images/careers-hero-team.png" alt="AAAMT team collaborating around a digital whiteboard in the office">
           </div>
         </div>
       </div>
     </section>
     <section class="section work">
-      <div class="wrap work-layout">
-        <div class="work-intro">
-          <p class="pill">How we work</p>
-          <h2>Work with context.<br>Build with ownership.</h2>
-          <img class="workshop" src="assets/images/CARRIER_H2.jpg" alt="Team workshop">
+      <div class="wrap">
+        <div class="work-head">
+          <p class="pill"><span class="pill-text">Working at AAAMT</span></p>
+          <h2>Work with context. Build with ownership.</h2>
+          <p class="work-lede">A culture of continuous learning, deep context, and relentless accountability.</p>
         </div>
-        <ol class="work-items">
-          <li><span>01</span><div><h3>Learn</h3><p>Learn from real work, real users, and people who bring different perspectives.</p></div></li>
-          <li><span>02</span><div><h3>Build</h3><p>Build products that solve meaningful problems and support real-world operations.</p></div></li>
-          <li><span>03</span><div><h3>Own</h3><p>Take ownership of your work, make thoughtful decisions, and see your ideas through.</p></div></li>
-          <li><span>04</span><div><h3>Grow</h3><p>Grow through meaningful challenges, continuous feedback, and increasing responsibility.</p></div></li>
-        </ol>
+        <div class="work-layout" data-work-layout>
+          <div class="work-media" aria-hidden="true">
+            <img class="is-active" data-work-image src="assets/images/learn.png" alt="">
+            <img data-work-image src="assets/images/build.png" alt="">
+            <img data-work-image src="assets/images/own.png" alt="">
+            <img data-work-image src="assets/images/grow.png" alt="">
+          </div>
+          <ol class="work-items">
+            <li class="is-active" data-work-item data-index="0">
+              <span>01</span>
+              <div>
+                <h3>Learn</h3>
+                <p>Build understanding through customer needs, practical work, feedback and collaboration</p>
+              </div>
+            </li>
+            <li data-work-item data-index="1">
+              <span>02</span>
+              <div>
+                <h3>Build</h3>
+                <p>Contribute to products and systems that help organisations operate</p>
+              </div>
+            </li>
+            <li data-work-item data-index="2">
+              <span>03</span>
+              <div>
+                <h3>Own</h3>
+                <p>Take responsibility for your commitments, communicate progress and follow through</p>
+              </div>
+            </li>
+            <li data-work-item data-index="3">
+              <span>04</span>
+              <div>
+                <h3>Grow</h3>
+                <p>Strengthen your skills and earn greater responsibility through demonstrated contribution</p>
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
-    <section class="section perspectives">
-      <div class="wrap">
-        <div class="leaders-head">
-          <p class="pill"><span class="pill-dot"></span> Team leaders perspectives</p>
-          <h2>Hear from the people building AAAMT.</h2>
-          <p>Give candidates a genuine view into the people and experiences behind the work.</p>
+    <section class="section perspectives" id="people-at-aaamt" aria-labelledby="people-at-aaamt-title">
+      <div class="wrap people-wrap">
+        <div class="people-head">
+          <p class="people-kicker"><span class="pill-text">People at AAAMT</span></p>
+          <h2 id="people-at-aaamt-title">Hear from the people building AAAMT</h2>
+          <p class="people-lede">Discover what our colleagues work on, what they have learned and what taking ownership means in their roles.</p>
         </div>
-        <div class="quote-grid">
-          <article class="leader-card" tabindex="0">
-            <div class="leader-photo">
-              <img src="assets/images/SHARARTH_REDDY.png" alt="Challa Sharath Reddy">
-              <div class="leader-label"><strong>Sharath Reddy</strong><span>Product</span></div>
-            </div>
-            <div class="leader-quote">
-              <h3>Challa Sharath Reddy</h3>
-              <p class="leader-role">Product Manager</p>
-              <p>Lorem ipsum dolor sit amet consectetur. Pulvinar nec nunc egestas a ac facilisis. Sem ut vivamus vulputate mattis egestas vitae pharetra phasellus. Cras id vitae et risus quis tortor. Eleifend volutpat porta nibh in lorem platea fermentum. Tincidunt turpis erat suspendisse egestas eu ac duis. Arcu varius neque ut dolor volutpat.</p>
-            </div>
-          </article>
-          <article class="leader-card" tabindex="0">
-            <div class="leader-photo">
-              <img src="assets/images/SINDHU.png" alt="Allamaneni Sindhuja">
-              <div class="leader-label"><strong>Allamaneni Sindhuja</strong><span>Engineering</span></div>
-            </div>
-            <div class="leader-quote">
-              <h3>Allamaneni Sindhuja</h3>
-              <p class="leader-role">Engineering</p>
-              <p>Lorem ipsum dolor sit amet consectetur. Pulvinar nec nunc egestas a ac facilisis. Sem ut vivamus vulputate mattis egestas vitae pharetra phasellus. Cras id vitae et risus quis tortor. Eleifend volutpat porta nibh in lorem platea fermentum. Tincidunt turpis erat suspendisse egestas eu ac duis. Arcu varius neque ut dolor volutpat.</p>
-            </div>
-          </article>
-          <article class="leader-card" tabindex="0">
-            <div class="leader-photo">
-              <img src="assets/images/KIRAN_KUMAR.png" alt="Kiran Kumar">
-              <div class="leader-label"><strong>Kiran Kumar</strong><span>Revenue</span></div>
-            </div>
-            <div class="leader-quote">
-              <h3>Kiran Kumar</h3>
-              <p class="leader-role">Revenue</p>
-              <p>Lorem ipsum dolor sit amet consectetur. Pulvinar nec nunc egestas a ac facilisis. Sem ut vivamus vulputate mattis egestas vitae pharetra phasellus. Cras id vitae et risus quis tortor. Eleifend volutpat porta nibh in lorem platea fermentum. Tincidunt turpis erat suspendisse egestas eu ac duis. Arcu varius neque ut dolor volutpat.</p>
-            </div>
-          </article>
-          <article class="leader-card" tabindex="0">
-            <div class="leader-photo">
-              <img src="assets/images/SREEJA_HR.png" alt="Samanthapuri Sreeja">
-              <div class="leader-label"><strong>Samanthapuri Sreeja</strong><span>HR</span></div>
-            </div>
-            <div class="leader-quote">
-              <h3>Samanthapuri Sreeja</h3>
-              <p class="leader-role">HR</p>
-              <p>Lorem ipsum dolor sit amet consectetur. Pulvinar nec nunc egestas a ac facilisis. Sem ut vivamus vulputate mattis egestas vitae pharetra phasellus. Cras id vitae et risus quis tortor. Eleifend volutpat porta nibh in lorem platea fermentum. Tincidunt turpis erat suspendisse egestas eu ac duis. Arcu varius neque ut dolor volutpat.</p>
-            </div>
-          </article>
+
+        <div class="people-carousel" data-people-carousel>
+          <div class="people-track" data-people-track>
+            <article class="people-card">
+              <div class="people-card-top">
+                <img class="people-avatar" src="assets/images/SHARARTH_REDDY.png" alt="" width="72" height="72" decoding="async">
+                <div class="people-meta">
+                  <strong>Challa Sharath Reddy</strong>
+                  <span>Product</span>
+                </div>
+                <span class="people-quote-mark" aria-hidden="true">·</span>
+              </div>
+              <p>We decide which customer problems deserve attention and help teams understand what to build, why it matters and what success would look like. We encourage direct customer learning, clear priorities and open discussion of trade offs with design, engineering and customer-facing teams. Joining us means contributing from discovery through release, developing your product judgement and taking responsibility for checking whether what we shipped actually helped.</p>
+            </article>
+
+            <article class="people-card">
+              <div class="people-card-top">
+                <img class="people-avatar" src="assets/images/SINDHU.png" alt="" width="72" height="72" decoding="async">
+                <div class="people-meta">
+                  <strong>Allamaneni</strong>
+                  <span>Engineering</span>
+                </div>
+                <span class="people-quote-mark" aria-hidden="true">·</span>
+              </div>
+              <p>We turn customer problems into software that people can rely on, taking responsibility for how it is built, maintained and improved. We value curiosity, independent thinking and accountability, encouraging everyone to challenge assumptions, learn from mistakes and continuously improve how we work. Joining us means working on real product challenges and developing your technical judgement, while owning the quality of your work and learning from what happens after release.</p>
+            </article>
+
+            <article class="people-card">
+              <div class="people-card-top">
+                <img class="people-avatar" src="assets/images/KIRAN_KUMAR.png" alt="" width="72" height="72" decoding="async">
+                <div class="people-meta">
+                  <strong>Kiran Kumar</strong>
+                  <span>Revenue</span>
+                </div>
+                <span class="people-quote-mark" aria-hidden="true">·</span>
+              </div>
+              <p>We help customers understand whether our products fit their needs and turn that understanding into lasting business relationships. We encourage thoughtful questions, honest commitments and shared learning from customer conversations, including opportunities we do not win. Joining us means developing your judgement across discovery, GTM and customer relationships, while taking responsibility for disciplined follow-through, accurate expectations and the business results of your work.</p>
+            </article>
+
+            <article class="people-card">
+              <div class="people-card-top">
+                <img class="people-avatar" src="assets/images/SREEJA_HR.png" alt="" width="72" height="72" decoding="async">
+                <div class="people-meta">
+                  <strong>Sreeja</strong>
+                  <span>HR</span>
+                </div>
+                <span class="people-quote-mark" aria-hidden="true">·</span>
+              </div>
+              <p>We shape how people join, settle into their roles and experience working at AAAMT, while helping teams build clear and fair people practices. We encourage listening carefully, explaining decisions and following through on feedback, with respect for confidentiality and individual circumstances. Joining us means contributing to hiring, onboarding and employee experience, while learning to balance employee needs with business priorities and taking responsibility for the care and consistency of your work.</p>
+            </article>
+          </div>
+
+          <div class="people-nav" role="group" aria-label="People quotes">
+            <button type="button" class="people-nav-btn is-prev" data-people-prev aria-label="Previous quote">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="people-nav-btn is-next" data-people-next aria-label="Next quote">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
     <section class="section culture" id="life">
       <div class="wrap culture-layout">
         <div class="culture-copy">
-          <p class="pill">Our culture</p>
-          <h2>Built on Curiosity.<br>Driven by<br>Ownership.</h2>
-          <p>At AAAMT, we believe great products come from people who stay curious, take ownership, collaborate openly, and turn ideas into meaningful outcomes.</p>
+          <p class="pill"><span class="pill-text">Our culture</span></p>
+          <h2>
+            <span class="culture-line">Curiosity in our thinking.</span>
+            <span class="culture-line">Ownership in our work.</span>
+          </h2>
+          <p>We aim to build an environment where people understand the problem, share what they learn and take responsibility for useful outcomes.</p>
         </div>
         <div class="pillar-grid">
           <article>
             <span>01</span>
             <h3>Curiosity</h3>
-            <p>We stay curious, ask questions, explore new ideas, and continuously learn.</p>
+            <p>Ask questions, investigate assumptions and understand the work before proposing a solution</p>
           </article>
           <article>
             <span>02</span>
             <h3>Ownership</h3>
-            <p>We take responsibility for our work, decisions, and outcomes.</p>
+            <p>Follow through on commitments and raise risks early</p>
           </article>
           <article>
             <span>03</span>
             <h3>Collaboration</h3>
-            <p>We work together, share knowledge, and value different perspectives.</p>
+            <p>Share context, seek feedback and work across functions</p>
           </article>
           <article class="wide">
             <span>04</span>
-            <h3>Innovation</h3>
-            <p>We challenge the usual way of doing things and turn ideas into practical solutions.</p>
+            <h3>Practical Innovation</h3>
+            <p>Explore better methods and tools where they improve quality or usefulness</p>
           </article>
           <article class="wide">
             <span>05</span>
             <h3>Impact</h3>
-            <p>We focus on creating meaningful outcomes for our customers, teams, and organization.</p>
+            <p>Connect your contribution to the people using our products</p>
           </article>
         </div>
       </div>
     </section>
-    <section class="section teams" id="teams">
+
+    <section class="section teams" id="teams" aria-label="Open roles by function">
       <div class="wrap">
         <h2>Make a difference by working on what truly matter</h2>
         <div class="team-bento">
-          <a class="team-card revenue" href="#roles">
-            <h3>Revenue</h3>
-            <p>5 Roles</p>
-            <span class="team-go light" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></span>
-          </a>
           <div class="team-stack">
-            <a class="team-card eng" href="#roles">
-              <h3>Engineering</h3>
+            <div class="team-card revenue">
+              <h3>Revenue</h3>
               <p>5 Roles</p>
-              <span class="team-go lime" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></span>
-            </a>
-            <a class="team-card product" href="#roles">
-              <h3>Product</h3>
-              <p>2 Roles</p>
-              <span class="team-go pink" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></span>
-            </a>
+              <span class="team-go light" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="#32cb4d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
           </div>
           <div class="team-stack">
-            <a class="team-card finance" href="#roles">
+            <div class="team-card eng">
+              <h3>Engineering</h3>
+              <p>5 Roles</p>
+              <span class="team-go orange" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <div class="team-card product">
+              <h3>Product</h3>
+              <p>2 Roles</p>
+              <span class="team-go orange" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="team-stack">
+            <div class="team-card finance">
               <h3>Finance</h3>
               <p>3 Roles</p>
-              <span class="team-go orange" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></span>
-            </a>
-            <a class="team-card hr" href="#roles">
-              <h3>HR</h3>
+              <span class="team-go orange" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <div class="team-card hr">
+              <h3>People &amp; Culture</h3>
               <p>1 Roles</p>
-              <span class="team-go orange" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></span>
-            </a>
-            <a class="team-card all" href="#roles">
+              <span class="team-go orange" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <div class="team-card all">
               <h3>View all open positions</h3>
-              <span class="team-go light" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></span>
-            </a>
+              <span class="team-go light" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="#197bea" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section class="section openings" id="roles">
       <div class="wrap">
-        <p class="pill">Open roles</p>
-        <h2>Find your next opportunity.</h2>
-        <p class="openings-lede">Explore current opportunities across our teams and find a role that matches your experience, interests and the kind of work you want to take ownership of.</p>
+        <p class="pill"><span class="pill-text">Open roles</span></p>
+        <h2>Find a role where you can contribute</h2>
+        <p class="openings-lede">Explore current opportunities by team, location and employment type. Open a role to understand its responsibilities, requirements and hiring process.</p>
         <form class="openings-filters" role="search">
           <label class="search-field">
             <span class="sr-only">Search by job title or keyword</span>
@@ -216,56 +299,99 @@
             <span class="sr-only">Function</span>
             <select name="function" aria-label="Function">
               <option value="">Function</option>
+              <option value="product">Product</option>
+              <option value="revenue">Revenue</option>
+              <option value="engineering">Engineering</option>
             </select>
           </div>
           <div class="filter-select">
             <span class="sr-only">Employment Type</span>
             <select name="type" aria-label="Employment Type">
               <option value="">Employment Type</option>
+              <option value="full-time">Full-time</option>
+              <option value="internship">Internship</option>
+              <option value="apprenticeship">Apprenticeship</option>
             </select>
           </div>
           <div class="filter-select">
             <span class="sr-only">Location</span>
             <select name="location" aria-label="Location">
               <option value="">Location</option>
+              <option value="hyderabad">Hyderabad</option>
             </select>
           </div>
         </form>
         <h3>Current Openings</h3>
-        <div class="opening-list" id="opening-list"></div>
+        <div class="opening-list" id="opening-list">
+          <article class="opening-card" data-function="product" data-type="full-time" data-location="hyderabad">
+            <div class="opening-main">
+              <div class="opening-title-row">
+                <h4>Product Designer</h4>
+                <span class="opening-tag is-fulltime">Full-time</span>
+              </div>
+              <p class="opening-meta">Product · Hyderabad</p>
+              <p class="opening-desc">Build reliable software experiences for products used in real operational environments.</p>
+            </div>
+            <a class="opening-cta" href="#" aria-disabled="true">View Role <img src="assets/icons/arrow-orange.svg" alt="" width="24" height="24"></a>
+          </article>
+          <article class="opening-card" data-function="revenue" data-type="internship" data-location="hyderabad">
+            <div class="opening-main">
+              <div class="opening-title-row">
+                <h4>Customer Success Executive</h4>
+                <span class="opening-tag is-internship">Internship</span>
+              </div>
+              <p class="opening-meta">Revenue · Hyderabad</p>
+              <p class="opening-desc">Build reliable software experiences for products used in real operational environments.</p>
+            </div>
+            <a class="opening-cta" href="#" aria-disabled="true">View Role <img src="assets/icons/arrow-orange.svg" alt="" width="24" height="24"></a>
+          </article>
+          <article class="opening-card" data-function="engineering" data-type="apprenticeship" data-location="hyderabad">
+            <div class="opening-main">
+              <div class="opening-title-row">
+                <h4>Software Development Engineering</h4>
+                <span class="opening-tag is-apprenticeship">Apprenticeship</span>
+              </div>
+              <p class="opening-meta">Engineering · Hyderabad</p>
+              <p class="opening-desc">Build reliable software experiences for products used in real operational environments.</p>
+            </div>
+            <a class="opening-cta" href="#" aria-disabled="true">View Role <img src="assets/icons/arrow-orange.svg" alt="" width="24" height="24"></a>
+          </article>
+        </div>
       </div>
     </section>
+   
+
     <section class="section platforms" id="community">
       <div class="wrap">
-        <p class="pill">Hear from the community</p>
-        <h2>Get to know AAAMT beyond the job<br>description.</h2>
-        <p class="platforms-lede">Explore employee perspectives and workplace experiences on trusted career platforms before taking the next step.</p>
+        <p class="pill"><span class="pill-text">Additional perspectives</span></p>
+        <h2>Get to know AAAMT beyond this page</h2>
+        <p class="platforms-lede">Explore employee reviews on independent platforms as part of understanding whether AAAMT is right for you.</p>
         <div class="platform-grid">
           <a class="platform-card" href="https://www.ambitionbox.com/overview/aaamt-verticals-overview" target="_blank" rel="noopener noreferrer">
             <div class="platform-brand">
               <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path fill="#4b6bff" d="M14 2.2 24.2 8v12L14 25.8 3.8 20V8L14 2.2Z"/><path fill="#fff" d="M14 7.2 19.6 10.4v6.4L14 20l-5.6-3.2v-6.4L14 7.2Z"/><path fill="#4b6bff" d="M14 10.2 17 11.9v3.4L14 17l-3-1.7v-3.4l3-1.7Z"/></svg>
               <h3>Ambition Box</h3>
             </div>
-            <p>Explore employee reviews, workplace experiences, salary insights, and interview experiences about AAAMT.</p>
-            <span class="platform-link">View AAAMT on Ambitionbox →</span>
+            <p>Explore employee reviews, workplace experiences, salary insights, and interview experiences.</p>
+            <span class="platform-link">Read reviews on Ambitionbox ?</span>
           </a>
           <a class="platform-card" href="https://www.glassdoor.co.in/Overview/Working-at-AAAMT-Verticals-EI_IE10877360.11,26.htm" target="_blank" rel="noopener noreferrer">
             <div class="platform-brand">
               <img class="platform-logo" src="assets/images/glass_door.png" alt="" width="28" height="28">
               <h3>Glassdoor</h3>
             </div>
-            <p>Discover employee perspectives, company reviews, workplace information, and interview experiences about AAAMT.</p>
-            <span class="platform-link">View AAAMT on Glassdoor →</span>
+            <p>Discover employee perspectives, company reviews, workplace information, and interview experiences.</p>
+            <span class="platform-link">Read reviews on Glassdoor ?</span>
           </a>
         </div>
       </div>
     </section>
-    <section class="section talent" id="talent">
+    <!-- <section class="section talent" id="talent">
       <div class="wrap">
         <div class="talent-intro">
-          <p class="pill"><span class="pill-dot" aria-hidden="true"></span>Talent network</p>
-          <h2>Don’t see the right role?</h2>
-          <p>Tell us what kind of work you’re interested in. Join our Talent Network and hear about future opportunities where applicable.</p>
+          <p class="pill"><span class="pill-dot" aria-hidden="true"></span><span class="pill-text">Talent network</span></p>
+          <h2>Don't see the right role?</h2>
+          <p>Tell us what kind of work you're interested in. Join our Talent Network and hear about future opportunities where applicable.</p>
           <button class="btn btn-orange" type="button" id="talent-open">Join Talent Network <img src="assets/icons/arrow-right-white.svg" alt="" width="16" height="16"></button>
           <p class="talent-hint">Opens a labelled modal. Escape closes; focus returns to the trigger.</p>
         </div>
@@ -273,7 +399,7 @@
           <div class="talent-panel-head">
             <div>
               <h2 id="talent-title">Join the Talent Network</h2>
-              <p>Modal concept · no account required</p>
+              <p>Modal concept — no account required</p>
             </div>
             <button class="talent-close" type="button" data-close aria-label="Close">×</button>
           </div>
@@ -300,22 +426,30 @@
           <label class="upload" for="cv">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff9900" stroke-width="1.6" aria-hidden="true"><path d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.5A3.5 3.5 0 0 1 18 18"/><path d="M12 16V9"/><path d="m9 12 3-3 3 3"/></svg>
             <strong>Resume Upload</strong>
-            <span data-file-label>PDF or DOCX · size limit placeholder</span>
+            <span data-file-label>PDF or DOCX — size limit placeholder</span>
             <input id="cv" name="cv" type="file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
           </label>
           <label class="check"><input type="checkbox" name="consent" required> <span>I consent to AAAMT using this information for relevant future opportunities.</span></label>
-          <p class="talent-privacy">Privacy and retention period placeholder. Review <a href="privacy.html">Candidate Privacy</a> before submitting.</p>
-          <button class="btn btn-orange" type="submit">Join Talent Network <img src="assets/icons/arrow-right-white.svg" alt="" width="16" height="16"></button>
+          <p class="talent-privacy">Privacy and retention period placeholder. Review <a href="/privacy-policy/">Candidate Privacy</a> before submitting.</p>
+          <button class="btn btn-green" type="submit">Submit <img src="assets/icons/arrow-cta.svg" alt="" width="16" height="16"></button>
           <p class="form-note" data-form-note></p>
         </form>
       </div>
-    </section>
-    <section class="cta-band">
+    </section> -->
+    <section class="cta-band careers-cta">
       <div class="wrap">
         <div class="cta-card">
-          <video class="cta-photo" src="assets/images/blue_however_effect.mp4" muted playsinline preload="auto" loop></video>
-          <div class="cta-copy"><h2>Ready to build what's next?</h2></div>
-          <span class="cta-signal"></span>
+          <video class="cta-photo" src="assets/images/blue_however_effect.mp4" autoplay muted playsinline preload="auto" loop></video>
+          <div>
+            <div class="cta-copy">
+              <h2>Find your place in what we're building</h2>
+              <p>Explore a current role or stay connected for future opportunities at AAAMT</p>
+            </div>
+            <div class="cta-actions">
+              <a class="btn btn-orange" href="#roles">View open roles <img src="assets/icons/arrow-cta.svg" alt="" width="16" height="16"></a>
+              <a class="btn btn-white" href="/contact#enquiry">Join our Talent Network</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -325,59 +459,68 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img class="footer-logo" src="assets/images/logo-footer.png" alt="AAAMT">
-          <p>Engineering robust software solutions, AI infrastructures, and operational modules for institutions globally.</p>
+          <p>AAAMT is an Indian SaaS product company focused on simplifying how organizations work with customer value, ownership and long term thinking at its core</p>
         </div>
-        <div class="footer-col"><h2>Quick Links</h2><a href="index.html">Home</a><a href="#products" data-open-products>Products</a><a href="about.html">About Us</a><a href="careers.html">Careers</a><a href="contact.html">Contact Us</a></div>
-        <div class="footer-col"><h2>Products</h2><a href="https://instituterun.com/" target="_blank" rel="noopener noreferrer">InstituteRun ERP</a><a href="https://doqzy.com/" target="_blank" rel="noopener noreferrer">Doqzy CLM</a></div>
+        <div class="footer-col"><h2>Company</h2><a href="/">Home</a><a href="#products" data-open-products>Products</a><a href="/careers">Careers</a><a href="/contact">Contact Us</a></div>
+        <div class="footer-col"><h2>Products</h2><a href="https://instituterun.com/" target="_blank" rel="noopener noreferrer">InstituteRun</a><a href="https://doqzy.com/" target="_blank" rel="noopener noreferrer">Doqzy</a></div>
         <div class="footer-col">
           <h2>Contact</h2>
           <div class="contact-row"><span class="icon-bubble"><img src="assets/icons/phone.svg" alt="" width="14" height="14"></span><p>+91&nbsp;&nbsp;7286069999</p></div>
-          <div class="contact-row"><span class="icon-bubble"><img src="assets/icons/mail.svg" alt="" width="14" height="14"></span><p>Example@gmail.com</p></div>
-          <div class="contact-row"><span class="icon-bubble"><img src="assets/icons/pin.svg" alt="" width="14" height="14"></span><p>M Square, Flat 102 HITECH City,<br>Madhapur, Telangana 500081</p></div>
+          <div class="contact-row"><span class="icon-bubble"><img src="assets/icons/mail.svg" alt="" width="14" height="14"></span><p>sales@aaamt.in</p></div>
         </div>
       </div>
       <div class="footer-bottom">
         <p><strong>© 2026 AAAMT Verticals Private Limited.</strong> All rights reserved.</p>
         <div class="legal-social">
-          <div class="legal"><a href="terms.html">Terms &amp; Conditions</a><span>|</span><a href="privacy.html">Privacy Policy</a><span>|</span><a href="disclosure.html">Disclosure</a></div>
+          <div class="legal"><a href="/terms">Terms &amp; Conditions</a><span>|</span><a href="/privacy-policy/">Privacy Policy</a><span>|</span><a href="/disclosure">Disclosure</a></div>
           <div class="socials">
-            <a class="icon-bubble" href="https://facebook.com" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="" width="14" height="14"></a>
-            <a class="icon-bubble" href="https://instagram.com" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="" width="14" height="14"></a>
-            <a class="icon-bubble" href="https://youtube.com" aria-label="YouTube"><img src="assets/icons/social-3.svg" alt="" width="14" height="14"></a>
-            <a class="icon-bubble" href="https://x.com" aria-label="X"><img src="assets/icons/twitter.svg" alt="" width="14" height="14"></a>
             <a class="icon-bubble" href="https://www.linkedin.com/company/aaamtverticals/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="" width="14" height="14"></a>
           </div>
         </div>
       </div>
     </div>
   </footer>
-  <script src="js/nav.js?v=legal1"></script>
+  <button type="button" class="chatbot-float" aria-label="Open AAAMT AI Assistant" aria-haspopup="dialog" aria-controls="aaamt-chat-dialog" aria-expanded="false">
+    <img src="assets/images/chatbot-nemo.png" alt="" width="148" height="148" decoding="async">
+  </button>
+  <div class="float-contact" aria-label="Quick contact">
+    <a class="float-contact__btn is-whatsapp" href="https://wa.me/919381760264?text=hi" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><img src="assets/icons/whatsapp.svg" alt="" width="26" height="26"></a>
+    <a class="float-contact__btn is-gmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=support@aaamt.in" target="_blank" rel="noopener noreferrer" aria-label="Email support@aaamt.in"><img src="assets/icons/gmail.svg" alt="" width="26" height="26"></a>
+  </div>
+  <script src="js/nav.js?v=rfull1"></script>
+  <script src="js/careers-people.js?v=people7"></script>
   <script src="js/forms.js"></script>
+  <script src="js/careers.js?v=worklayout1"></script>
   <script>
     (function () {
-      document.querySelectorAll(".leader-card").forEach(function (card) {
-        function setFlipped(flipped) {
-          card.classList.toggle("is-flipped", flipped);
-          card.setAttribute("aria-pressed", flipped ? "true" : "false");
-        }
-        card.setAttribute("role", "button");
-        setFlipped(false);
-        card.addEventListener("pointerenter", function (event) {
-          if (event.pointerType === "mouse") setFlipped(true);
-        });
-        card.addEventListener("pointerleave", function (event) {
-          if (event.pointerType === "mouse") setFlipped(false);
-        });
-        card.addEventListener("click", function () {
-          setFlipped(!card.classList.contains("is-flipped"));
-        });
-        card.addEventListener("keydown", function (event) {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            setFlipped(!card.classList.contains("is-flipped"));
-          }
+      document.querySelectorAll(".opening-cta").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
         });
       });
+    })();
+
+    (function () {
+      var form = document.querySelector(".openings-filters");
+      var list = document.getElementById("opening-list");
+      if (!form || !list) return;
+      var cards = Array.prototype.slice.call(list.querySelectorAll(".opening-card"));
+      function applyFilters() {
+        var q = (form.q.value || "").trim().toLowerCase();
+        var fn = form.function.value;
+        var type = form.type.value;
+        var loc = form.location.value;
+        cards.forEach(function (card) {
+          var title = (card.querySelector("h4") || {}).textContent || "";
+          var matchQ = !q || title.toLowerCase().indexOf(q) !== -1;
+          var matchFn = !fn || card.getAttribute("data-function") === fn;
+          var matchType = !type || card.getAttribute("data-type") === type;
+          var matchLoc = !loc || card.getAttribute("data-location") === loc;
+          card.classList.toggle("is-hidden", !(matchQ && matchFn && matchType && matchLoc));
+        });
+      }
+      form.addEventListener("input", applyFilters);
+      form.addEventListener("change", applyFilters);
     })();
 
     (function () {
@@ -417,6 +560,7 @@
         }
         function paint() {
           label.textContent = currentLabel();
+          trigger.classList.toggle("is-placeholder", !select.value);
           menu.innerHTML = "";
           Array.prototype.forEach.call(select.options, function (option) {
             var item = document.createElement("li");
@@ -500,10 +644,13 @@
       var fileLabel = form.querySelector("[data-file-label]");
       if (file && fileLabel) {
         file.addEventListener("change", function () {
-          fileLabel.textContent = file.files && file.files[0] ? file.files[0].name : "PDF or DOCX · size limit placeholder";
+          fileLabel.textContent = file.files && file.files[0] ? file.files[0].name : "PDF or DOCX — size limit placeholder";
         });
       }
     })();
   </script>
+  <script src="js/chatbot-config.js?v=rag1"></script>
+  <script src="js/chatbot-api.js?v=rag1"></script>
+  <script src="js/chatbot.js?v=rag1"></script>
 </body>
 </html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <title>Partnership Enquire — AAAMT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css?v=logopos1">
+  <link rel="stylesheet" href="css/chatbot.css?v=rag1">
+  <link rel="stylesheet" href="css/partnership.css?v=nophone1">
+  <link rel="stylesheet" href="css/responsive.css?v=nophone1">
+</head>
+<body class="page-partner-with page-partner-enquire">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="/"><img src="assets/images/logo-header.png" alt="AAAMT" width="53" height="52"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="site-nav">
+        <a class="nav-link" href="/">Home</a>
+        <div class="nav-drop">
+          <button class="nav-link nav-drop-btn" type="button" aria-expanded="false">Products <img src="assets/icons/chevron.svg" alt="" width="16" height="16"></button>
+          <div class="nav-drop-panel">
+            <div class="mega">
+              <a class="mega-card mega-product" href="https://instituterun.com/" target="_blank" rel="noopener noreferrer">
+                <img class="mega-product-logo" src="assets/icons/instituterun-mega.svg" alt="" width="35" height="48">
+                <h3>InstituteRun</h3>
+                <p>AI-Powered Automation &amp; Communication Platform for<br>Schools, Colleges &amp; Universities</p>
+              </a>
+              <a class="mega-card mega-product" href="https://doqzy.com/" target="_blank" rel="noopener noreferrer">
+                <img class="mega-doqzy-logo" src="assets/images/Dogzy.png" alt="" width="48" height="48">
+                <h3>Doqzy</h3>
+                <p>AI-Powered Contract Management for Legal, Procurement, Finance, Sales &amp; Operations Teams</p>
+              </a>
+              <div class="mega-note">
+                <div class="mega-note-copy">
+                  <strong>One Company.<br>A growing product portfolio</strong>
+                  <p>Discover the people, principles and ambition behind AAAMT..</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="nav-link" href="/careers">Careers</a>
+        <a class="nav-link" href="/contact">Contact Us</a>
+        <a class="btn btn-orange mobile-cta" href="/partnership">Partnership</a>
+      </nav>
+      <a class="btn btn-orange" href="/partnership">Back to Partnership</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="partner-enquire is-page" id="partner-enquire">
+      <div class="partner-shell partner-enquire-inner">
+        <p class="partner-enquire-kicker"><span class="pill-text">Express Your Interest</span></p>
+        <h2>Tell us about your partnership interest.</h2>
+        <p class="partner-enquire-lede">Share your background, the customers you work with and how you would like to contribute. We'll use this information to assess the opportunity and determine the next step</p>
+
+        <form class="partner-form" data-validate data-enquiry-api data-partner-steps>
+          <div class="partner-form-progress" role="navigation" aria-label="Form steps">
+            <div class="partner-form-progress-item is-active" data-step-label="1">
+              <span>1 Your profile</span>
+              <i></i>
+            </div>
+            <div class="partner-form-progress-item" data-step-label="2">
+              <span>2 Partnership fit</span>
+              <i></i>
+            </div>
+          </div>
+
+          <div class="partner-form-step is-active" data-step="1">
+            <h3>Tell us who you are and how we can respond.</h3>
+            <div class="partner-form-grid">
+              <div class="field">
+                <label for="full-name">Full Name <span class="req">*</span></label>
+                <input id="full-name" name="full-name" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="email">Email Address <span class="req">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <fieldset class="partner-fieldset">
+              <legend>How are you applying? <span class="req">*</span></legend>
+              <div class="partner-radio-grid">
+                <label class="partner-radio-card">
+                  <input type="radio" name="partner-type" value="Business or Organisation" required checked>
+                  <span>Business or Organisation</span>
+                </label>
+                <label class="partner-radio-card">
+                  <input type="radio" name="partner-type" value="Independent Professional">
+                  <span>Independent Professional</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="field" data-org-field>
+              <label for="org">Organisation Name <span class="req">*</span></label>
+              <input id="org" name="organisation" autocomplete="organization" required>
+            </div>
+            <div class="field">
+              <label for="website">Professional Website or profile <span class="optional">(optional)</span></label>
+              <input id="website" name="website" type="url" autocomplete="url">
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number <span class="req">*</span></label>
+              <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="15" placeholder="e.g. 9876543210" required>
+              <p class="field-error" data-phone-error hidden>Please enter phone like this: digits only (e.g. 9876543210).</p>
+            </div>
+            <button class="btn btn-orange partner-form-next" type="button">Continue to partnership fit</button>
+          </div>
+
+          <div class="partner-form-step" data-step="2" hidden>
+            <div class="partner-form-summary">
+              <div>
+                <strong data-profile-name></strong>
+                <span data-profile-email></span>
+              </div>
+              <a href="#partner-enquire" data-edit-profile>Edit profile</a>
+            </div>
+            <h3>Partnership fit</h3>
+
+            <fieldset class="partner-fieldset">
+              <legend>Product Interest <span class="req">*</span></legend>
+              <div class="partner-check-grid">
+                <label class="partner-check-card"><input type="checkbox" name="product-interest" value="InstituteRun"><span>InstituteRun</span></label>
+                <label class="partner-check-card"><input type="checkbox" name="product-interest" value="Doqzy"><span>Doqzy</span></label>
+                <label class="partner-check-card"><input type="checkbox" name="product-interest" value="Not Sure"><span>Not Sure</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="partner-fieldset">
+              <legend>Partnership interest <span class="req">*</span></legend>
+              <div class="partner-radio-stack">
+                <label class="partner-radio-card is-stack"><input type="radio" name="partner-model" value="Referral" required><span>Referral</span></label>
+                <label class="partner-radio-card is-stack"><input type="radio" name="partner-model" value="Assisted selling"><span>Assisted selling</span></label>
+                <label class="partner-radio-card is-stack"><input type="radio" name="partner-model" value="Implementation services"><span>Implementation services</span></label>
+                <label class="partner-radio-card is-stack"><input type="radio" name="partner-model" value="Not sure"><span>Not sure</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="customer-groups">Customer groups <span class="req">*</span></label>
+              <div class="select-wrap">
+                <select id="customer-groups" name="customer-groups" required>
+                  <option value="" selected disabled>Select customer groups</option>
+                  <option value="Schools &amp; colleges">Schools &amp; colleges</option>
+                  <option value="Universities">Universities</option>
+                  <option value="Legal teams">Legal teams</option>
+                  <option value="SMBs">SMBs</option>
+                  <option value="Enterprises">Enterprises</option>
+                  <option value="Mixed / other">Mixed / other</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="target-country">Primary target country <span class="req">*</span></label>
+              <div class="select-wrap">
+                <select id="target-country" name="target-country" required>
+                  <option value="" selected disabled>Select country</option>
+                  <option value="India">India</option>
+                  <option value="United States">United States</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="United Arab Emirates">United Arab Emirates</option>
+                  <option value="Singapore">Singapore</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="start-timeline">Start timeline <span class="req">*</span></label>
+              <div class="select-wrap">
+                <select id="start-timeline" name="start-timeline" required>
+                  <option value="" selected disabled>Select timeline</option>
+                  <option value="Immediately">Immediately</option>
+                  <option value="Within 1 month">Within 1 month</option>
+                  <option value="1–3 months">1–3 months</option>
+                  <option value="3–6 months">3–6 months</option>
+                  <option value="Exploring only">Exploring only</option>
+                </select>
+              </div>
+            </div>
+            <div class="field field-message">
+              <label for="market-approach">Market approach <span class="req">*</span></label>
+              <textarea id="market-approach" name="market-approach" rows="4" placeholder="Describe how you plan to approach the market" required></textarea>
+            </div>
+            <input type="hidden" id="enquiry-type" name="enquiry-type" value="partnership">
+            <p class="partner-form-privacy">Please review our Privacy Notice. Avoid including passwords, confidential documents or sensitive personal data.</p>
+            <div class="partner-form-actions">
+              <button class="btn btn-orange" type="submit">Send partnership enquiry <img src="assets/icons/arrow-cta.svg" alt="" width="16" height="16"></button>
+              <button class="btn partner-form-back" type="button">Back</button>
+            </div>
+          </div>
+          <p class="form-note" data-form-note></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo" src="assets/images/logo-footer.png" alt="AAAMT">
+          <p>AAAMT is an Indian SaaS product company focused on simplifying how organizations work with customer value, ownership and long term thinking at its core</p>
+        </div>
+        <div class="footer-col"><h2>Company</h2><a href="/">Home</a><a href="#products" data-open-products>Products</a><a href="/careers">Careers</a><a href="/contact">Contact Us</a><a href="/partnership">Partnership</a></div>
+        <div class="footer-col"><h2>Products</h2><a href="https://instituterun.com/" target="_blank" rel="noopener noreferrer">InstituteRun</a><a href="https://doqzy.com/" target="_blank" rel="noopener noreferrer">Doqzy</a></div>
+        <div class="footer-col">
+          <h2>Contact</h2>
+          <div class="contact-row"><span class="icon-bubble"><img src="assets/icons/phone.svg" alt="" width="14" height="14"></span><a href="tel:+917286069999">+91 7286069999</a></div>
+          <div class="contact-row"><span class="icon-bubble"><img src="assets/icons/mail.svg" alt="" width="14" height="14"></span><p>sales@aaamt.in</p></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p><strong>© 2026 AAAMT Verticals Private Limited.</strong> All rights reserved.</p>
+        <div class="legal-social">
+          <div class="legal"><a href="/terms">Terms &amp; Conditions</a><span>|</span><a href="/privacy-policy/">Privacy Policy</a><span>|</span><a href="/disclosure">Disclosure</a></div>
+          <div class="socials">
+            <a class="icon-bubble" href="https://www.linkedin.com/company/aaamtverticals/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="" width="14" height="14"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <button type="button" class="chatbot-float" aria-label="Open AAAMT AI Assistant" aria-haspopup="dialog" aria-controls="aaamt-chat-dialog" aria-expanded="false">
+    <img src="assets/images/chatbot-nemo.png" alt="" width="148" height="148" decoding="async">
+  </button>
+  <div class="float-contact" aria-label="Quick contact">
+    <a class="float-contact__btn is-whatsapp" href="https://wa.me/919381760264?text=hi" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><img src="assets/icons/whatsapp.svg" alt="" width="26" height="26"></a>
+    <a class="float-contact__btn is-gmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=support@aaamt.in" target="_blank" rel="noopener noreferrer" aria-label="Email support@aaamt.in"><img src="assets/icons/gmail.svg" alt="" width="26" height="26"></a>
+  </div>
+  <script src="js/nav.js?v=rfull1"></script>
+  <script src="js/forms.js?v=smtp1"></script>
+  <script src="js/partner-form.js?v=nophone1"></script>
+  <script src="js/chatbot-config.js?v=rag1"></script>
+  <script src="js/chatbot-api.js?v=rag1"></script>
+  <script src="js/chatbot.js?v=rag1"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+# Hostinger (LiteSpeed / Apache) — clean URLs (no .html in the browser)
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS optional — leave commented unless needed
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Redirect any *.html request to the clean URL
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# privacy-policy.html → /privacy-policy/
+RewriteCond %{THE_REQUEST} \s/+privacy-policy\.html[\s?] [NC]
+RewriteRule ^privacy-policy\.html$ /privacy-policy/ [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Legacy privacy filenames → canonical trailing-slash URL
+RewriteRule ^(PRIVACY_POLICY\.html|privacy\.html)$ /privacy-policy/ [R=301,L,NC]
+
+# Canonical: /privacy-policy → /privacy-policy/
+RewriteRule ^privacy-policy$ /privacy-policy/ [R=301,L]
+
+# Directory index for /privacy-policy/
+DirectoryIndex index.html
+
+# Serve extensionless paths as .html files when the file exists
+# (skip if a real directory exists, e.g. privacy-policy/)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]

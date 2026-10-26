@@ -3,43 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Product Designer · AAAMT Careers</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <title>AAAMT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@14,500;14,700&family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css?v=resp1">
-  <link rel="stylesheet" href="css/about.css?v=resp1">
-  <link rel="stylesheet" href="css/careers.css?v=resp1">
+  <link rel="stylesheet" href="css/base.css?v=nemo1">
+  <link rel="stylesheet" href="css/chatbot.css?v=rag1">
+  <link rel="stylesheet" href="css/about.css?v=rfull1">
+  <link rel="stylesheet" href="css/careers.css?v=rfull1">
+  <link rel="stylesheet" href="css/responsive.css?v=rfull1">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="logo" href="index.html"><img src="assets/images/logo-header.png" alt="AAAMT" width="53" height="52"></a>
+      <a class="logo" href="/"><img src="assets/images/logo-header.png" alt="AAAMT" width="53" height="52"></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
       <nav class="site-nav">
-        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="/">Home</a>
         <div class="nav-drop">
           <button class="nav-link nav-drop-btn" type="button" aria-expanded="false">Products <img src="assets/icons/chevron.svg" alt="" width="16" height="16"></button>
           <div class="nav-drop-panel">
             <div class="mega">
-              <a class="mega-card" href="https://instituterun.com/" target="_blank" rel="noopener noreferrer"><img src="assets/images/inst_product.png" alt="InstituteRun. Comprehensive Automation and Communication Tool for Colleges"></a>
-              <a class="mega-card" href="https://doqzy.com/" target="_blank" rel="noopener noreferrer"><img src="assets/images/Doqzy_prod.png" alt="Doqzy. Contract Lifecycle Management, Automated End-to-End"></a>
-              <a class="mega-note" href="about.html"><p>Purpose-built SaaS products for Indian enterprises</p><span>Learn more about AAAMT <img src="assets/icons/arrow-orange.svg" alt="" width="18" height="18"></span></a>
+              <a class="mega-card mega-product" href="https://instituterun.com/" target="_blank" rel="noopener noreferrer">
+                <img class="mega-product-logo" src="assets/icons/instituterun-mega.svg" alt="" width="35" height="48">
+                <h3>InstituteRun</h3>
+                <p>AI-Powered Automation &amp; Communication Platform for<br>Schools, Colleges &amp; Universities</p>
+              </a>
+              <a class="mega-card mega-product" href="https://doqzy.com/" target="_blank" rel="noopener noreferrer">
+                <img class="mega-doqzy-logo" src="assets/images/Dogzy.png" alt="" width="48" height="48">
+                <h3>Doqzy</h3>
+                <p>AI-Powered Contract Management for Legal, Procurement, Finance, Sales &amp; Operations Teams</p>
+              </a>
+              <div class="mega-note">
+                <div class="mega-note-copy">
+                  <strong>One Company.<br>A growing product portfolio</strong>
+                  <p>Discover the people, principles and ambition behind AAAMT..</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <a class="nav-link" href="about.html">About Us</a>
-        <a class="nav-link is-current" href="careers.html">Careers</a>
-        <a class="nav-link" href="contact.html">Contact Us</a>
-        <a class="btn btn-orange mobile-cta" href="contact.html">Get in Touch</a>
+        <a class="nav-link is-current" href="/careers">Careers</a>
+        <a class="nav-link" href="/contact">Contact Us</a>
+        <a class="btn btn-orange mobile-cta" href="/contact">Get in Touch</a>
       </nav>
-      <a class="btn btn-orange" href="careers.html#talent">Get in Touch</a>
+      <a class="btn btn-orange" href="/careers#talent">Get in Touch</a>
     </div>
   </header>
   <main>
     <section class="page-hero">
       <div class="wrap">
-        <p class="pill">Product &amp; Design</p>
+        <p class="pill"><span class="pill-text">Product &amp; Design</span></p>
         <h1>Product Designer</h1>
       </div>
     </section>
@@ -69,7 +85,7 @@
           <li>How to balance user needs, product strategy and implementation constraints.</li>
           <li>How shared product patterns evolve across multiple enterprise products.</li>
         </ul>
-        <a class="btn btn-orange" href="careers.html#talent" style="margin-top:32px">Ready to build what's next?</a>
+        <a class="btn btn-orange" href="/careers#talent" style="margin-top:32px">Ready to build what's next?</a>
       </div>
     </section>
   </main>
@@ -77,10 +93,20 @@
     <div class="wrap">
       <div class="footer-bottom">
         <p><strong>© 2026 AAAMT Verticals Private Limited.</strong> All rights reserved.</p>
-        <div class="legal"><a href="terms.html">Terms &amp; Conditions</a><span>|</span><a href="privacy.html">Privacy Policy</a><span>|</span><a href="disclosure.html">Disclosure</a></div>
+        <div class="legal"><a href="/terms">Terms &amp; Conditions</a><span>|</span><a href="/privacy-policy/">Privacy Policy</a><span>|</span><a href="/disclosure">Disclosure</a></div>
       </div>
     </div>
   </footer>
-  <script src="js/nav.js?v=legal1"></script>
+  <button type="button" class="chatbot-float" aria-label="Open AAAMT AI Assistant" aria-haspopup="dialog" aria-controls="aaamt-chat-dialog" aria-expanded="false">
+    <img src="assets/images/chatbot-nemo.png" alt="" width="148" height="148" decoding="async">
+  </button>
+  <div class="float-contact" aria-label="Quick contact">
+    <a class="float-contact__btn is-whatsapp" href="https://wa.me/919381760264?text=hi" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><img src="assets/icons/whatsapp.svg" alt="" width="26" height="26"></a>
+    <a class="float-contact__btn is-gmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=support@aaamt.in" target="_blank" rel="noopener noreferrer" aria-label="Email support@aaamt.in"><img src="assets/icons/gmail.svg" alt="" width="26" height="26"></a>
+  </div>
+  <script src="js/nav.js?v=rfull1"></script>
+  <script src="js/chatbot-config.js?v=rag1"></script>
+  <script src="js/chatbot-api.js?v=rag1"></script>
+  <script src="js/chatbot.js?v=rag1"></script>
 </body>
 </html>

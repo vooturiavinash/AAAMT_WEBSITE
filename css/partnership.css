@@ -1,0 +1,1589 @@
+/* Partnership pages — fluid layout (no max-width on page shells) */
+
+.page-partnership,
+.page-partner-with {
+  overflow-x: clip;
+}
+
+.partner-shell {
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: clamp(16px, 4.5vw, 80px);
+}
+
+.partner-eyebrow {
+  margin: 0 0 12px;
+  color: #0f9f6e;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.partner-text-link {
+  display: inline-flex;
+  margin-top: 16px;
+  color: #197ae9;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.partner-text-link.is-orange { color: #ff9900; }
+.partner-text-link::after { content: " ›"; }
+
+/* Hero — Figma Contact hero 9580-232982: 1440×690, pad 80, space-between */
+.partner-hero {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 690px;
+  height: 690px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #197ae9;
+  color: #fff;
+  /* Figma: Top/Bottom 80 + Left/Right 80 (L/R via shell) */
+  padding: 80px 0;
+}
+.partner-hero > .partner-shell {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 80px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.partner-hero-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+.partner-hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 28px;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 580px;
+}
+.partner-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+.partner-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50px;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  line-height: normal;
+  white-space: nowrap;
+}
+.partner-hero-badge img {
+  width: 12px;
+  height: 12px;
+  flex: none;
+  animation: partner-spin 8s linear infinite;
+}
+@keyframes partner-spin { to { transform: rotate(360deg); } }
+.partner-hero-copy h1 {
+  margin: 0;
+  width: max-content;
+  max-width: 100%;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(32px, 4.4vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.2px;
+  color: #fff;
+  /* <br> lines stay intact — do not wrap “New opportunities” like Figma */
+  white-space: nowrap;
+}
+.partner-hero-lede {
+  margin: 0;
+  max-width: 560px;
+  width: 100%;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+}
+.partner-hero-copy .btn {
+  margin: 0;
+  height: 51px;
+  padding-inline: 28px;
+  border-radius: 12px;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 700;
+}
+/* Figma framed photo — exact 535×366 outer (border-box) */
+.partner-hero-photo {
+  box-sizing: border-box;
+  width: 535px;
+  height: 366px;
+  flex: 0 0 535px;
+  max-width: 100%;
+  padding: 0;
+  border: 8px solid #fff;
+  border-radius: 20px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: none;
+}
+.partner-hero-crop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.partner-hero-photo img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+}
+
+/* Who / Ways to partner — Figma cards + note banner */
+.partner-who {
+  background: #fff;
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.partner-who-head {
+  text-align: left;
+  margin: 0 0 clamp(32px, 4vw, 48px);
+  max-width: 820px;
+}
+.partner-who-kicker {
+  margin: 0 0 12px;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.partner-who-kicker .pill-text {
+  background-image: linear-gradient(90deg, #ff9900 0%, #197ae9 48%, #23b93e 100%);
+}
+.partner-who h2 {
+  margin: 0;
+  text-align: left;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 800;
+  color: #101827;
+  letter-spacing: -0.6px;
+}
+.partner-who-lede {
+  margin: 16px 0 0;
+  max-width: 760px;
+  color: #667085;
+  font-family: "DM Sans", "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.partner-who-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 28px);
+}
+.partner-who-card {
+  position: relative;
+  border-radius: 16px;
+  padding: clamp(28px, 3vw, 40px);
+  box-sizing: border-box;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.25s ease;
+}
+.partner-who-card.is-referral {
+  background: linear-gradient(165deg, #fffaf5 0%, #fff4ea 55%, #ffeedd 100%);
+  border: 1px solid rgba(255, 153, 0, 0.35);
+}
+.partner-who-card.is-assisted {
+  background: linear-gradient(165deg, #f7faff 0%, #eef5ff 55%, #e6f0ff 100%);
+  border: 1px solid rgba(25, 122, 233, 0.18);
+}
+.partner-who-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+}
+.partner-who-card.is-referral:hover {
+  border-color: rgba(255, 153, 0, 0.55);
+}
+.partner-who-card.is-assisted:hover {
+  border-color: rgba(25, 122, 233, 0.35);
+}
+.partner-who-label {
+  margin: 0 0 14px;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.partner-who-card.is-referral .partner-who-label { color: #ff9900; }
+.partner-who-card.is-assisted .partner-who-label { color: #197ae9; }
+.partner-who-card h3 {
+  margin: 0 0 14px;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 700;
+  color: #101827;
+  letter-spacing: -0.3px;
+}
+.partner-who-card > p:not(.partner-who-label) {
+  margin: 0;
+  color: #667085;
+  font-family: "DM Sans", "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  flex: 1;
+}
+.partner-who-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  color: #101827;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.3;
+  transition: gap 0.28s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s ease;
+}
+.partner-who-cta:hover {
+  gap: 12px;
+  color: #197ae9;
+}
+.partner-who-cta span {
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.partner-who-cta:hover span {
+  transform: translate(2px, -2px);
+}
+.partner-who-note {
+  margin-top: clamp(16px, 2vw, 24px);
+  padding: clamp(18px, 2.2vw, 24px) clamp(20px, 2.5vw, 28px);
+  border-radius: 14px;
+  background: linear-gradient(165deg, #f4fbf6 0%, #eaf8ef 100%);
+  border: 1px solid rgba(35, 185, 62, 0.28);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.partner-who-note:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(35, 185, 62, 0.08);
+}
+.partner-who-note p {
+  margin: 0;
+  color: #101827;
+  font-family: "DM Sans", "Manrope", sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.partner-who-note strong {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+}
+
+/* Products — Figma 9603-3521: alternating fit rows + Contact Us */
+.partner-products {
+  background: #fff9f0;
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.partner-products-head {
+  text-align: left;
+  margin: 0 0 clamp(40px, 5vw, 64px);
+  max-width: 820px;
+}
+.partner-products-kicker {
+  margin: 0 0 12px;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.partner-products-kicker .pill-text {
+  background-image: linear-gradient(90deg, #ff9900 0%, #e6a04d 42%, #23b93e 72%, #23b93e 100%);
+}
+.partner-products-head h2 {
+  margin: 0;
+  text-align: left;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  color: #101827;
+}
+.partner-fit-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 6vw, 80px);
+  width: 100%;
+}
+.partner-fit-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.partner-fit-card.is-flip {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+.partner-fit-visual {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f1f1f1;
+  text-decoration: none;
+}
+.partner-fit-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2256 / 1336;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.partner-fit-card:hover .partner-fit-visual img {
+  transform: scale(1.03);
+}
+.partner-fit-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+.partner-fit-label {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: #98a2b3;
+}
+.partner-fit-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  line-height: 1.15;
+  color: #101827;
+}
+.partner-fit-name img {
+  width: 28px;
+  height: 36px;
+  object-fit: contain;
+  flex: none;
+}
+.partner-fit-name .doqzy-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+}
+.partner-fit-question {
+  margin: 20px 0 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(16px, 1.5vw, 18px);
+  font-weight: 600;
+  line-height: 1.45;
+  color: #344054;
+}
+.partner-fit-desc {
+  margin: 10px 0 0;
+  max-width: 520px;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #667085;
+}
+.partner-fit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+.partner-fit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 22px;
+  border-radius: 50px;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.2s transform ease-in-out, 0.2s border-color ease-in-out, 0.2s background ease, 0.2s color ease;
+}
+.partner-fit-btn img {
+  width: 16px;
+  height: 16px;
+}
+/* coolBeans wipe — same motion as home .product-link */
+.partner-fit-btn.is-primary {
+  --fillerColor: #197ae9;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  width: fit-content;
+  background: #ebebeb;
+  border: 2px solid #ebebeb;
+  color: #1c1c1c;
+  will-change: transform;
+}
+.partner-fit-card.is-doqzy .partner-fit-btn.is-primary {
+  --fillerColor: #6d7bfa;
+}
+.partner-fit-btn.is-primary::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background-color: var(--fillerColor);
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: 0;
+  pointer-events: none;
+}
+.partner-fit-btn-text {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #1c1c1c;
+}
+.partner-fit-btn.is-primary img {
+  filter: brightness(0);
+}
+.partner-fit-card:hover .partner-fit-btn.is-primary::after,
+.partner-fit-btn.is-primary:hover::after {
+  transform: translate(0, 0);
+}
+.partner-fit-card:hover .partner-fit-btn.is-primary,
+.partner-fit-btn.is-primary:hover {
+  border-color: transparent;
+  transform: scale(1.05);
+  color: #1c1c1c;
+}
+.partner-fit-card.is-instituterun .partner-fit-btn.is-ghost {
+  background: transparent;
+  color: #197ae9;
+  border: 1.5px solid #197ae9;
+  border-radius: 10px;
+}
+.partner-fit-card.is-instituterun .partner-fit-btn.is-ghost:hover {
+  background: rgba(25, 122, 233, 0.06);
+}
+.partner-fit-card.is-doqzy .partner-fit-btn.is-ghost {
+  background: transparent;
+  color: #6d7bfa;
+  border: 1.5px solid #6d7bfa;
+  border-radius: 10px;
+}
+.partner-fit-card.is-doqzy .partner-fit-btn.is-ghost:hover {
+  background: rgba(109, 123, 250, 0.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .partner-fit-btn.is-primary,
+  .partner-fit-btn.is-primary::after {
+    transition: none;
+  }
+  .partner-fit-card:hover .partner-fit-btn.is-primary,
+  .partner-fit-btn.is-primary:hover {
+    transform: none;
+  }
+}
+
+/* Practical — Figma “The Working Relationship”: h2 exactly 3 lines */
+.partner-practical {
+  background: #fff;
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.partner-practical-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 380px) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+}
+.partner-practical-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+.partner-practical-kicker {
+  margin: 0 0 14px;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.partner-practical-kicker .pill-text {
+  background-image: linear-gradient(90deg, #ff9900 0%, #197ae9 50%, #23b93e 100%);
+}
+.partner-practical h2 {
+  margin: 0;
+  width: max-content;
+  max-width: 100%;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 3.6vw, 40px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  color: #101827;
+}
+.partner-practical-rule {
+  display: block;
+  width: 44px;
+  height: 3px;
+  margin-top: 18px;
+  border-radius: 2px;
+  background: #ff9900;
+}
+.partner-practical-note {
+  margin: 28px 0 0;
+  max-width: 280px;
+  color: #98a2b3;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+.partner-principles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.partner-principles li {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  margin: 0;
+  padding: 22px 0;
+  border-bottom: 1px solid #eaecf0;
+}
+.partner-principles li:first-child {
+  padding-top: 0;
+}
+.partner-principles li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.partner-principles-num {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  line-height: 1.4;
+  color: #ff9900;
+  padding-top: 2px;
+}
+.partner-principles-body {
+  min-width: 0;
+}
+.partner-principles-body h3 {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(16px, 1.4vw, 18px);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+  color: #101827;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+.partner-principles-body p {
+  margin: 6px 0 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #667085;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* Company — Figma About AAAMT 9605-3527: space-between, tops aligned, 540×360 */
+.partner-company {
+  background: #fff9f0;
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.partner-company > .partner-shell {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 80px;
+  box-sizing: border-box;
+}
+.partner-with-intro {
+  background: #f7efe6;
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.partner-company-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  width: 100%;
+}
+.partner-company-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  flex: 0 1 520px;
+  max-width: 520px;
+  min-width: 0;
+}
+.partner-company-kicker {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 20px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(16, 24, 39, 0.06);
+  border: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+}
+.partner-company-kicker .pill-text {
+  background-image: linear-gradient(89.72deg, #ff9900 19.06%, #197ae9 50%, #23b93e 80.94%);
+}
+.partner-company-copy h1,
+.partner-company-copy h2 {
+  margin: 0;
+  max-width: 520px;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 3.6vw, 40px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: #101827;
+  text-align: left;
+}
+.partner-company-copy h1 span,
+.partner-company-copy h2 span {
+  color: #197ae9;
+}
+.partner-company-copy > p:not(.partner-company-kicker) {
+  margin: 18px 0 0;
+  max-width: 520px;
+  color: #667085;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  text-align: left;
+}
+.partner-company-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 28px;
+  color: #ff9900;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-align: left;
+}
+.partner-company-cta:hover {
+  color: #e68900;
+}
+.partner-company-cta span {
+  font-size: 15px;
+  line-height: 1;
+  text-decoration: none;
+}
+.partner-company-photo {
+  box-sizing: border-box;
+  flex: 0 0 540px;
+  width: 540px;
+  max-width: 100%;
+  height: 360px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #e8e8e8;
+}
+.partner-company-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* Partner-with intro — same framed 535×366 as partnership hero */
+.partner-with-intro .partner-company-grid {
+  grid-template-columns: minmax(0, 1fr) 535px;
+  align-items: center;
+}
+.partner-with-photo {
+  justify-self: end;
+}
+
+/* Steps — Figma How It Works: gradient kicker, bordered cards, jump hover */
+.partner-steps {
+  background: #fff;
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.partner-steps-head {
+  text-align: left;
+  margin: 0 0 clamp(36px, 4vw, 48px);
+}
+.partner-steps-kicker {
+  margin: 0 0 12px;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.partner-steps-kicker .pill-text {
+  background-image: linear-gradient(90deg, #ff9900 0%, #e6a04d 42%, #23b93e 72%, #23b93e 100%);
+}
+.partner-steps h2 {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  color: #101827;
+}
+.partner-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+.partner-step-card {
+  padding: 28px 24px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1.5px solid #f0e6d8;
+  box-sizing: border-box;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+}
+.partner-step-card:hover {
+  transform: translateY(-8px);
+  border-color: #e8d5bc;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+}
+.partner-step-num {
+  display: inline-flex;
+  margin-bottom: 16px;
+  color: #ff9900;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+.partner-step-card h3 {
+  margin: 0 0 10px;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+  color: #101827;
+}
+.partner-step-card p {
+  margin: 0;
+  color: #667085;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+@media (prefers-reduced-motion: reduce) {
+  .partner-step-card {
+    transition: none;
+  }
+  .partner-step-card:hover {
+    transform: none;
+  }
+}
+
+/* Enquire form — Figma Express Your Interest (2-step) */
+.page-partner-enquire .partner-enquire.is-page {
+  min-height: calc(100vh - 180px);
+}
+.partner-enquire {
+  background: #eef3f8;
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.partner-enquire-inner {
+  max-width: 920px;
+  margin-inline: auto;
+}
+.partner-enquire-kicker {
+  margin: 0 0 12px;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.partner-enquire-kicker .pill-text {
+  background-image: linear-gradient(90deg, #ff9900 0%, #197ae9 48%, #23b93e 100%);
+}
+.partner-enquire h2 {
+  margin: 0;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #101827;
+}
+.partner-enquire-lede {
+  margin: 14px auto 32px;
+  max-width: 720px;
+  text-align: center;
+  color: #667085;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.partner-form {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 20px;
+  padding: clamp(24px, 3vw, 40px);
+  border: 1px solid #e6edf5;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+.partner-form-progress {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 0 0 28px;
+}
+.partner-form-progress-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.partner-form-progress-item span {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #98a2b3;
+  transition: color 0.3s ease;
+}
+.partner-form-progress-item.is-active span {
+  color: #101827;
+}
+.partner-form-progress-item.is-done span {
+  color: #98a2b3;
+}
+.partner-form-progress-item i {
+  position: relative;
+  display: block;
+  height: 3px;
+  border-radius: 999px;
+  background: #e4e7ec;
+  overflow: hidden;
+}
+.partner-form-progress-item i::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #ff9900;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.partner-form-progress-item.is-active i::after,
+.partner-form-progress-item.is-done i::after {
+  transform: scaleX(1);
+}
+.partner-form-progress-item:nth-child(2).is-animating i::after {
+  animation: partner-progress-fill 0.55s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes partner-progress-fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .partner-form-progress-item i::after {
+    transition: none;
+  }
+  .partner-form-progress-item:nth-child(2).is-animating i::after {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+.partner-form-step[hidden] {
+  display: none !important;
+}
+.partner-form h3 {
+  margin: 0 0 24px;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #101827;
+}
+.partner-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.partner-form .field {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 16px;
+  gap: 8px;
+}
+.partner-form .field-message textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 110px;
+  border: 1px solid #d7e0ea;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  resize: vertical;
+  background: #fff;
+}
+.partner-form label,
+.partner-fieldset legend {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+.partner-form .req { color: #e11d48; }
+.partner-form .optional {
+  color: #98a2b3;
+  font-weight: 500;
+}
+.partner-form input,
+.partner-form select {
+  width: 100%;
+  box-sizing: border-box;
+  height: 48px;
+  border: 1px solid #d7e0ea;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  background: #fff;
+  color: #101827;
+}
+.partner-form input:focus,
+.partner-form select:focus,
+.partner-form textarea:focus {
+  outline: none;
+  border-color: #197ae9;
+  box-shadow: 0 0 0 3px rgba(25, 122, 233, 0.12);
+}
+.partner-form .select-wrap { position: relative; }
+.partner-form .select-wrap::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #667085;
+  border-bottom: 2px solid #667085;
+  transform: translateY(-60%) rotate(45deg);
+  pointer-events: none;
+}
+.partner-form select {
+  appearance: none;
+  padding-right: 36px;
+}
+.partner-fieldset {
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+}
+.partner-radio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+.partner-radio-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 14px 16px;
+  border: 1.5px solid #d0d5dd;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #344054;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.partner-radio-card input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex: none;
+  accent-color: #101827;
+}
+.partner-radio-card:has(input:checked) {
+  border-color: #ff9900;
+  background: #fff7ed;
+}
+.partner-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 20px 0 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+.partner-form .btn { margin-top: 8px; }
+.partner-form-hint {
+  margin: -12px 0 20px;
+  color: #98a2b3;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+.partner-form [data-org-field].is-hidden-field,
+.partner-form [data-org-field][hidden] {
+  display: none !important;
+}
+.partner-form-summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e4e7ec;
+}
+.partner-form-summary strong {
+  display: block;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #101827;
+}
+.partner-form-summary span {
+  display: block;
+  margin-top: 2px;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  color: #667085;
+}
+.partner-form-summary a {
+  flex: none;
+  color: #197ae9;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.partner-check-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+.partner-check-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 14px 16px;
+  border: 1.5px solid #d0d5dd;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #344054;
+}
+.partner-check-card input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex: none;
+  accent-color: #ff9900;
+}
+.partner-check-card:has(input:checked) {
+  border-color: #ff9900;
+  background: #fff7ed;
+}
+.partner-radio-stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+.partner-radio-card.is-stack {
+  width: 100%;
+}
+.partner-form-privacy {
+  margin: 8px 0 16px;
+  color: #98a2b3;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.partner-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+.partner-form-back {
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 10px;
+  border: 1.5px solid #d0d5dd;
+  background: #fff;
+  color: #344054;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+.partner-form .form-note {
+  min-height: 1.2em;
+  margin: 12px 0 0;
+  color: #d14343;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+}
+.partner-form .field-error {
+  margin: 0;
+  color: #d14343;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.partner-form .field-error[hidden] {
+  display: none !important;
+}
+.partner-form input[aria-invalid="true"],
+.partner-form select[aria-invalid="true"] {
+  border-color: #d14343;
+  box-shadow: 0 0 0 3px rgba(209, 67, 67, 0.12);
+}
+
+/* FAQ — Figma: left title + right accordion */
+.partner-faq {
+  background: #fff;
+  padding: clamp(64px, 9vw, 112px) 0;
+}
+.partner-faq-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.partner-faq-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+.partner-faq-intro {
+  position: sticky;
+  top: 96px;
+}
+.partner-faq-kicker {
+  margin: 0 0 14px;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.partner-faq-kicker .pill-text {
+  background-image: linear-gradient(90deg, #ff9900 0%, #197ae9 48%, #23b93e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.partner-faq-intro h2 {
+  margin: 0;
+  max-width: 14ch;
+  color: #101827;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+}
+.partner-faq-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #e6e8eb;
+  min-width: 0;
+}
+.partner-faq-item {
+  border-bottom: 1px solid #e6e8eb;
+}
+.partner-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 22px 2px;
+  border: 0;
+  background: transparent;
+  color: #101827;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(16px, 1.4vw, 18px);
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.22s ease;
+}
+.partner-faq-q:hover {
+  color: #197ae9;
+}
+.partner-faq-q:focus-visible {
+  outline: 3px solid rgba(25, 122, 233, 0.28);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+.partner-faq-item.is-open .partner-faq-q {
+  color: #101827;
+  padding-bottom: 10px;
+}
+.partner-faq-q-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.partner-faq-icon {
+  position: relative;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.partner-faq-icon::before,
+.partner-faq-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 2.5px;
+  background: #ff9900;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+}
+.partner-faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.partner-faq-item.is-open .partner-faq-icon::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg) scaleX(0);
+}
+.partner-faq-a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.partner-faq-a[hidden] {
+  display: none;
+}
+.partner-faq-item.is-open .partner-faq-a {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+.partner-faq-a-inner,
+.partner-faq-a > p {
+  overflow: hidden;
+  min-height: 0;
+}
+.partner-faq-a > p {
+  margin: 0;
+  padding: 0 2px 22px;
+  max-width: 40rem;
+  color: #667085;
+  font-family: "DM Sans", "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.28s ease 0.04s,
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1) 0.04s;
+}
+.partner-faq-item.is-open .partner-faq-a > p {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .partner-faq-a,
+  .partner-faq-a > p,
+  .partner-faq-icon,
+  .partner-faq-icon::before,
+  .partner-faq-icon::after {
+    transition: none !important;
+  }
+}
+
+/* CTA band — same video card pattern as home/contact */
+.partner-cta-band.cta-band {
+  background: #fff;
+  padding: clamp(48px, 7vw, 88px) 0;
+}
+.partner-cta-card {
+  position: relative;
+  overflow: hidden;
+}
+.partner-cta-card .cta-photo {
+  object-fit: cover;
+}
+.partner-cta-copy {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.partner-cta-copy h2 {
+  margin: 0 0 12px;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 3.8vw, 44px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+.partner-cta-copy p {
+  margin: 0;
+  font-family: "DM Sans", "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+}
+.partner-cta-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+.partner-cta-actions .btn {
+  height: 51px;
+  border-radius: 12px;
+}
+
+/* Responsive — fluid, no max-width constraints */
+@media (max-width: 980px) {
+  .partner-hero {
+    min-height: 0;
+    height: auto;
+    padding: 56px 0;
+  }
+  .partner-hero > .partner-shell {
+    max-width: none;
+    padding-inline: clamp(16px, 4.5vw, 80px);
+  }
+  .partner-who-grid,
+  .partner-practical-grid,
+  .partner-faq-grid,
+  .partner-with-intro .partner-company-grid {
+    grid-template-columns: 1fr;
+  }
+  .partner-faq-intro {
+    position: static;
+  }
+  .partner-faq-intro h2 {
+    max-width: none;
+    margin-bottom: 8px;
+  }
+  .partner-company > .partner-shell {
+    max-width: none;
+    padding-inline: clamp(16px, 4.5vw, 80px);
+  }
+  .partner-company-grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+  .partner-company-copy {
+    flex: none;
+    max-width: none;
+  }
+  .partner-company-photo {
+    flex: none;
+    width: min(540px, 100%);
+    height: auto;
+    aspect-ratio: 540 / 360;
+    align-self: center;
+  }
+  .partner-fit-card,
+  .partner-fit-card.is-flip {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .partner-fit-card.is-flip .partner-fit-visual {
+    order: -1;
+  }
+  .partner-fit-actions {
+    width: 100%;
+  }
+  .partner-fit-btn {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+  .partner-steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .partner-hero-grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+  .partner-hero-photo,
+  .partner-with-photo {
+    width: min(535px, 100%);
+    height: auto;
+    flex: none;
+    aspect-ratio: 535 / 366;
+    align-self: center;
+  }
+  .partner-hero-copy {
+    max-width: none;
+    gap: 32px;
+  }
+  .partner-hero-copy h1 {
+    margin-top: 28px;
+    font-size: clamp(28px, 7vw, 40px);
+    width: 100%;
+    white-space: normal;
+  }
+  .partner-hero-lede {
+    margin-top: 24px;
+  }
+  .partner-hero-copy .btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 640px) {
+  .partner-steps-grid,
+  .partner-form-grid,
+  .partner-radio-grid,
+  .partner-check-grid {
+    grid-template-columns: 1fr;
+  }
+  .partner-hero-copy .btn,
+  .partner-cta-actions .btn,
+  .partner-form .btn,
+  .partner-form-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .partner-who-note p {
+    font-size: 14px;
+  }
+  .partner-who-card {
+    min-height: 0;
+  }
+  .partner-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

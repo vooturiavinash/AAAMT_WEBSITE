@@ -1,0 +1,13 @@
+{
+  "name": "aaamt-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AAAMT static site with local Node server (static + partnership SMTP mail)",
+  "scripts": {
+    "start": "node serve.js",
+    "serve": "node serve.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.10.1"
+  }
+}
