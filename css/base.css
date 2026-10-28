@@ -753,7 +753,26 @@ h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: 0; }
   }
 }
 
+/* Short page-open: content and images ease in together, no wait before they appear */
+@keyframes page-open {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+main {
+  animation: page-open 0.34s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  main {
+    animation: none;
+  }
   .chatbot-float,
   .chatbot-float img {
     animation: none !important;

@@ -18,12 +18,13 @@
 .hero-photo {
   position: absolute;
   top: 0;
+  left: 0;
   right: 0;
-  width: min(1241px, 100%);
+  width: 100%;
   height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: center right;
+  object-position: center center;
   pointer-events: none;
   background: #0b3f86;
   opacity: 0;

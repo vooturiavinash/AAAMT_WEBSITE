@@ -64,7 +64,21 @@ h1, h2, h3, h4, p, li, label, a, span, strong {
   max-width: none;
   height: 100% !important;
   right: 0;
-  left: auto;
+  left: 0;
+  object-position: center center;
+}
+
+/* Wider than the 1280×720 video: keep hero height, widen the video, show the full frame */
+@media (min-width: 1280px) {
+  .hero-photo {
+    top: 0;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: fill;
+    object-position: center center;
+  }
 }
 
 .hero-wash {
