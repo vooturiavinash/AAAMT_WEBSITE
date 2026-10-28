@@ -244,6 +244,14 @@
   font-family: "Manrope", sans-serif;
   font-size: 16px;
   font-weight: 700;
+  box-shadow: none;
+  filter: none;
+}
+.enquiry-form .btn:hover,
+.enquiry-form .btn:focus,
+.enquiry-form .btn:active {
+  box-shadow: none;
+  filter: none;
 }
 
 .reassure {
@@ -312,17 +320,21 @@
   letter-spacing: -0.6px;
 }
 .contact-help .lede {
-  max-width: 560px;
+  max-width: none;
   margin: 14px auto 0;
   color: #667085;
   font-family: "Manrope", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.55;
+  text-align: center;
+  white-space: nowrap;
 }
-.contact-help .lede strong {
-  color: #101827;
-  font-weight: 700;
+@media (max-width: 900px) {
+  .contact-help .lede {
+    white-space: normal;
+    max-width: 36rem;
+  }
 }
 .help-card a strong {
   font-weight: 700;

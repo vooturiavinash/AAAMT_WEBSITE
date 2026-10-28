@@ -290,9 +290,27 @@ h1, h2, h3, h4, p, li, label, a, span, strong {
   transform: none !important;
 }
 
+/* Careers CTA — Figma 8862-6437: title + lede stay one line on desktop */
+.careers-cta .cta-card > div,
+.careers-cta .cta-card:hover > div {
+  width: min(1100px, calc(100% - 64px)) !important;
+}
+
 .careers-cta .cta-copy h2 {
-  white-space: normal !important;
-  font-size: clamp(26px, 4.5vw, 48px) !important;
+  white-space: nowrap !important;
+  font-size: clamp(28px, 3.2vw, 48px) !important;
+}
+
+.careers-cta .cta-copy p {
+  white-space: nowrap !important;
+  max-width: none !important;
+}
+
+@media (max-width: 980px) {
+  .careers-cta .cta-copy h2,
+  .careers-cta .cta-copy p {
+    white-space: normal !important;
+  }
 }
 
 /* ---------- Footer ---------- */
@@ -387,6 +405,18 @@ h1, h2, h3, h4, p, li, label, a, span, strong {
     grid-template-columns: minmax(0, 1fr) minmax(200px, 38%) !important;
   }
 
+  .partner-hero-photo,
+  .partner-with-photo,
+  .partner-company-photo {
+    width: min(480px, 100%) !important;
+    max-width: 540px !important;
+    height: auto !important;
+  }
+
+  .partner-steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
   .quote-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
@@ -472,8 +502,72 @@ h1, h2, h3, h4, p, li, label, a, span, strong {
   .platform-grid,
   .team-bento,
   .help-grid,
-  .contact-hero-grid {
+  .contact-hero-grid,
+  .partner-who-grid,
+  .partner-practical-grid,
+  .partner-faq-grid,
+  .partner-form-grid,
+  .partner-radio-grid,
+  .partner-check-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  .partner-hero-grid {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .partner-company-grid,
+  .partner-shell.partner-company-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .partner-hero-copy,
+  .partner-company-copy {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .partner-hero-photo,
+  .partner-with-photo,
+  .partner-company-photo {
+    width: 100% !important;
+    max-width: 534px !important;
+    flex: none !important;
+    align-self: flex-start;
+    justify-self: start !important;
+  }
+
+  .partner-shell.partner-enquire-inner {
+    max-width: 920px !important;
+  }
+
+  .partner-hero-copy h1 {
+    white-space: normal !important;
+    width: 100% !important;
+  }
+
+  .partner-fit-card,
+  .partner-fit-card.is-flip {
+    grid-template-columns: 1fr !important;
+  }
+
+  .partner-fit-actions,
+  .partner-form-actions,
+  .partner-cta-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .partner-hero-copy .btn,
+  .partner-fit-btn,
+  .partner-form .btn,
+  .partner-form-actions .btn,
+  .partner-form-back,
+  .partner-cta-actions .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: center;
   }
 
   .visit-top {
@@ -569,6 +663,9 @@ h1, h2, h3, h4, p, li, label, a, span, strong {
   .careers-cta .cta-actions,
   .contact-cta .hero-actions,
   .enquiry-form .form-actions,
+  .partner-form-actions,
+  .partner-cta-actions,
+  .partner-fit-actions,
   .hero-actions {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -579,14 +676,28 @@ h1, h2, h3, h4, p, li, label, a, span, strong {
   .contact-cta .btn-orange,
   .contact-cta .btn-white,
   .enquiry-form .btn,
+  .partner-form .btn,
+  .partner-form-actions .btn,
+  .partner-form-back,
+  .partner-cta-actions .btn,
+  .partner-fit-btn,
+  .partner-hero-copy .btn,
   .hero-actions .btn {
     width: 100% !important;
     min-width: 0 !important;
     justify-content: center;
   }
 
-  .enquiry-form .form-grid {
+  .enquiry-form .form-grid,
+  .partner-form-grid,
+  .partner-radio-grid,
+  .partner-check-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  .partner-cta-card {
+    height: auto !important;
+    padding: 48px 20px 36px !important;
   }
 
   .footer-grid {
@@ -597,7 +708,8 @@ h1, h2, h3, h4, p, li, label, a, span, strong {
 @media (max-width: 700px) {
   .path-grid,
   .pillar-grid,
-  .metrics {
+  .metrics,
+  .partner-steps-grid {
     grid-template-columns: 1fr !important;
   }
 
@@ -661,9 +773,17 @@ h1, h2, h3, h4, p, li, label, a, span, strong {
   }
 
   .enquiry-form,
+  .partner-form,
   .help-card,
   .visit-card {
     max-width: 100%;
+  }
+
+  .partner-enquire h2,
+  .partner-faq-intro h2,
+  .partner-who h2,
+  .partner-products h2 {
+    font-size: 28px !important;
   }
 }
 
@@ -677,7 +797,8 @@ h1, h2, h3, h4, p, li, label, a, span, strong {
 
   .hero h1,
   .careers-hero h1,
-  .contact-hero h1 {
+  .contact-hero h1,
+  .partner-hero-copy h1 {
     font-size: clamp(24px, 8vw, 30px) !important;
   }
 
@@ -689,7 +810,8 @@ h1, h2, h3, h4, p, li, label, a, span, strong {
 
   .careers-badge,
   .contact-badge,
-  .hero-badge {
+  .hero-badge,
+  .partner-hero-badge {
     font-size: 10px !important;
     letter-spacing: 0.5px !important;
     padding: 6px 10px !important;

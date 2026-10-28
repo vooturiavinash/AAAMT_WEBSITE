@@ -41,11 +41,13 @@
     }
 
     function updateButtons() {
-      var looping = maxIndex() > 0;
+      var max = maxIndex();
+      var looping = max > 0;
       prev.disabled = !looping;
       next.disabled = !looping;
-      prev.classList.toggle("is-active", false);
-      next.classList.toggle("is-active", true);
+      /* First: left white, right orange. Middle: both orange. Last: left orange, right white. */
+      prev.classList.toggle("is-active", index > 0);
+      next.classList.toggle("is-active", index < max);
     }
 
     function syncIndexFromScroll() {

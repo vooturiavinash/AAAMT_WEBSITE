@@ -228,13 +228,31 @@ body:has(.nav-drop.is-open)::before {
   transition:
     opacity 0.3s ease,
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.2s ease;
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .nav-drop.is-open .nav-drop-panel .mega-card,
 .nav-drop.is-open .nav-drop-panel .mega-note {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Jump / lift on hover once the mega menu is open */
+.nav-drop.is-open .nav-drop-panel .mega-card:hover,
+.nav-drop.is-open .nav-drop-panel .mega-note:hover {
+  transform: translateY(-10px);
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nav-drop.is-open .nav-drop-panel .mega-card:hover {
+  box-shadow: none;
+}
+
+.nav-drop.is-open .nav-drop-panel .mega-note:hover {
+  background: #fff;
+  box-shadow: none;
 }
 
 .nav-drop.is-open .nav-drop-panel .mega-card:nth-child(1) { transition-delay: 0.04s; }
@@ -277,9 +295,15 @@ body:has(.nav-drop.is-open)::before {
 .mega-card {
   display: block;
   border-radius: 16px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
-.mega-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12); }
+.mega-card:hover {
+  transform: translateY(-10px);
+  box-shadow: none;
+}
 .mega-card img:not(.mega-product-logo):not(.mega-doqzy-logo) {
   width: 100%;
   height: auto;
@@ -302,6 +326,7 @@ body:has(.nav-drop.is-open)::before {
   color: inherit;
   overflow: visible;
   box-sizing: border-box;
+  box-shadow: none;
 }
 
 .mega-product-logo {
@@ -352,13 +377,24 @@ body:has(.nav-drop.is-open)::before {
   padding: 28px 24px;
   text-align: left;
   background: #fffbf4;
-  border: 1.6px solid #ffd390;
+  border: 1.6px solid #ff9900;
   border-radius: 16px;
   color: #7e7a88;
   font-size: 16px;
   font-weight: 600;
   box-sizing: border-box;
   line-height: 1.5;
+  box-shadow: none;
+  transition:
+    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.25s ease;
+}
+
+.mega-note:hover {
+  transform: translateY(-10px);
+  background: #fff;
+  border-color: #ff9900;
+  color: #7e7a88;
 }
 
 .mega-note-copy {
@@ -385,6 +421,31 @@ body:has(.nav-drop.is-open)::before {
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
+}
+
+.mega-note-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  margin-top: 4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #ff9900;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.mega-note-btn span {
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .nav-toggle {
@@ -583,10 +644,10 @@ h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: 0; }
 .chatbot-float {
   position: fixed;
   right: max(8px, env(safe-area-inset-right, 0px));
-  bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 52px);
+  bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 136px);
   z-index: 1210;
   display: block;
-  width: min(148px, 34vw);
+  width: 97px;
   padding: 0;
   margin: 0;
   background: transparent;
@@ -637,7 +698,7 @@ h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: 0; }
   bottom: max(16px, env(safe-area-inset-bottom, 0px));
   z-index: 1200;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 12px;
 }
@@ -659,6 +720,7 @@ h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: 0; }
   width: 26px;
   height: 26px;
   display: block;
+  filter: brightness(0) invert(1);
 }
 .float-contact__btn.is-whatsapp { background: #25d366; }
 .float-contact__btn.is-gmail { background: var(--orange); }
@@ -672,9 +734,9 @@ h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: 0; }
 }
 @media (max-width: 600px) {
   .chatbot-float {
-    width: min(112px, 38vw);
+    width: 97px;
     right: 4px;
-    bottom: calc(16px + 48px);
+    bottom: calc(16px + 122px);
   }
   .float-contact {
     right: 16px;
@@ -699,7 +761,7 @@ h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: 0; }
   .btn, .nav-link, .mega-card, .product-card, .product-visual img, .eco-card, .help-card, .role-card, .principle, .path-card, .pillar-grid article, .socials .icon-bubble, .float-contact__btn, .footer-col h2::after {
     transition: none;
   }
-  .btn:hover, .mega-card:hover, .product-card:hover, .eco-card:hover, .help-card:hover, .role-card:hover, .principle:hover, .path-card:hover, .pillar-grid article:hover,
+  .btn:hover, .mega-card:hover, .mega-note:hover, .product-card:hover, .eco-card:hover, .help-card:hover, .role-card:hover, .principle:hover, .path-card:hover, .pillar-grid article:hover,
   .product-card:hover .product-visual img,
   .socials .icon-bubble:hover,
   .socials .icon-bubble:active,

@@ -1,10 +1,12 @@
 /**
- * AAAMT Nemo chat panel — UI matched to RAG frontend (Nemo Virtual Assistant).
+ * AAAMT Nemo chat panel — same behavior as the RAG frontend widget.
+ * Careers keywords and API redirect_url follow frontend/src/app.jsx.
  * API via AAAMTChatAPI (chatbot-api.js); no secrets.
  */
 (function () {
   var DIALOG_ID = "aaamt-chat-dialog";
   var NEMO_AVATAR = "assets/images/nemo-avatar.jpeg";
+  var CAREERS_URL = "/careers";
 
   var history = [];
   var pending = false;
@@ -32,46 +34,9 @@
     dialog.hidden = true;
 
     dialog.innerHTML =
-      '<div class="chatbot-topbar">' +
-      '  <div class="chatbot-topbar-left">' +
-      '    <div class="chatbot-brand">' +
-      '      <img src="' +
-      NEMO_AVATAR +
-      '" alt="" class="chatbot-brand-logo" width="40" height="40" decoding="async">' +
-      '      <h2 class="chatbot-brand-title" id="aaamt-chat-title">\'Nemo\' Virtual Assistant</h2>' +
-      "    </div>" +
-      "  </div>" +
-      '  <div class="chatbot-topbar-right">' +
-      '    <button type="button" class="chatbot-new-chat" data-chatbot-new hidden>' +
-      '      <span class="chatbot-new-chat-icon" aria-hidden="true">＋</span>' +
-      "      <span>New chat</span>" +
-      "    </button>" +
-      '    <button type="button" class="chatbot-close-btn" data-chatbot-close title="Close" aria-label="Close Nemo Virtual Assistant">×</button>' +
-      "  </div>" +
-      "</div>" +
-      '<div class="chatbot-chat-area" data-chatbot-messages>' +
-      '  <div class="chatbot-welcome-screen" data-chatbot-welcome>' +
-      '    <img src="' +
-      NEMO_AVATAR +
-      '" alt="" class="chatbot-welcome-logo" width="160" height="160" decoding="async">' +
-      "    <h3 class=\"chatbot-welcome-title\">Welcome to <span>AAAMT</span></h3>" +
-      '    <p class="chatbot-welcome-description">Hi! I\'m Nemo, AAAMT\'s virtual assistant. How can I help you today?</p>' +
-      "  </div>" +
-      '  <div class="chatbot-messages-list" data-chatbot-thread hidden></div>' +
-      "</div>" +
-      '<div class="chatbot-composer-area">' +
-      '  <form class="chatbot-composer" data-chatbot-form>' +
-      '    <label class="sr-only" for="aaamt-chat-input">Ask us about AAAMT</label>' +
-      '    <textarea id="aaamt-chat-input" class="chatbot-input" data-chatbot-input rows="1" maxlength="1000" placeholder="Ask us about AAAMT..." autocomplete="off"></textarea>' +
-      '    <button type="submit" class="chatbot-send" data-chatbot-send disabled aria-label="Send message">' +
-      SEND_ARROW +
-      "</button>" +
-      "  </form>" +
-      '  <p class="chatbot-disclaimer">AAAMT Virtual Assistant · Ask about our company and products.</p>' +
-      "</div>";
+      '<iframe class="chatbot-embed" title="Nemo Virtual Assistant" src="/chat-widget/index.html?embed=1"></iframe>';
 
     document.body.appendChild(dialog);
-
     return dialog;
   }
 
@@ -163,7 +128,12 @@
 
     var bubble = document.createElement("div");
     bubble.className = "chatbot-bubble";
-    bubble.textContent = text;
+    if (role === "assistant" && !opts.error) {
+      bubble.classList.add("is-markdown");
+      bubble.innerHTML = renderMarkdown(text);
+    } else {
+      bubble.textContent = text;
+    }
     content.appendChild(bubble);
 
     row.appendChild(content);
@@ -198,7 +168,7 @@
       '" alt="" width="42" height="42" decoding="async">' +
       "</div>" +
       '<div class="chatbot-msg-content">' +
-      '<div class="chatbot-msg-author">Nemo Assistant</div>' +
+      '<div class="chatbot-msg-author">Nemo virtual Assistant</div>' +
       '<div class="chatbot-typing-bubble"><span></span><span></span><span></span><p>Thinking...</p></div>' +
       "</div>";
     thread.appendChild(row);
@@ -273,6 +243,11 @@
     var q = String(question || "").trim();
     if (!q || pending) return;
 
+    if (isCareersQuery(q)) {
+      window.location.assign(CAREERS_URL);
+      return;
+    }
+
     appendMessage(dialog, "user", q);
     var input = $("[data-chatbot-input]", dialog);
     if (input) {
@@ -288,6 +263,10 @@
     try {
       var result = await api.sendChatMessage(q, history);
       showTyping(dialog, false);
+      if (result.redirectUrl) {
+        window.location.assign(result.redirectUrl);
+        return;
+      }
       appendMessage(dialog, "assistant", result.answer);
       history.push({ role: "user", content: q });
       history.push({ role: "assistant", content: result.answer });
@@ -309,6 +288,94 @@
       setSendEnabled(dialog);
       if (input) input.focus();
     }
+  }
+
+  function isCareersQuery(text) {
+    var normalized = String(text || "")
+      .replace(/\s+/g, " ")
+      .replace(/[.!?]+$/, "")
+      .trim()
+      .toLowerCase();
+    return (
+      normalized === "career" ||
+      normalized === "careers" ||
+      normalized === "job" ||
+      normalized === "jobs"
+    );
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function renderInline(value) {
+    return value
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, function (_match, label, url) {
+        return (
+          '<a href="' +
+          url +
+          '" target="_blank" rel="noopener noreferrer">' +
+          label +
+          "</a>"
+        );
+      })
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/(^|[^*])\*([^*]+)\*/g, "$1<em>$2</em>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>");
+  }
+
+  function renderMarkdown(source) {
+    var text = escapeHtml(source).replace(/\r\n/g, "\n").trim();
+    if (!text) return "";
+    return text
+      .split(/\n{2,}/)
+      .map(function (block) {
+        var lines = block.split("\n");
+        var bullet = lines.some(function (line) {
+          return /^\s*[-*]\s+/.test(line);
+        });
+        var numbered = lines.some(function (line) {
+          return /^\s*\d+\.\s+/.test(line);
+        });
+        if (bullet && lines.every(function (line) {
+          return line.trim() === "" || /^\s*[-*]\s+/.test(line);
+        })) {
+          return (
+            "<ul>" +
+            lines
+              .filter(function (line) {
+                return /^\s*[-*]\s+/.test(line);
+              })
+              .map(function (line) {
+                return "<li>" + renderInline(line.replace(/^\s*[-*]\s+/, "")) + "</li>";
+              })
+              .join("") +
+            "</ul>"
+          );
+        }
+        if (numbered && lines.every(function (line) {
+          return line.trim() === "" || /^\s*\d+\.\s+/.test(line);
+        })) {
+          return (
+            "<ol>" +
+            lines
+              .filter(function (line) {
+                return /^\s*\d+\.\s+/.test(line);
+              })
+              .map(function (line) {
+                return "<li>" + renderInline(line.replace(/^\s*\d+\.\s+/, "")) + "</li>";
+              })
+              .join("") +
+            "</ol>"
+          );
+        }
+        return "<p>" + lines.map(renderInline).join("<br>") + "</p>";
+      })
+      .join("");
   }
 
   function bind() {
@@ -336,6 +403,12 @@
     });
 
     var primaryLauncher = launchers[0];
+
+    window.addEventListener("message", function (event) {
+      if (event.origin !== window.location.origin) return;
+      if (!event.data || event.data.type !== "aaamt-chat-close") return;
+      if (isOpen(dialog)) closePanel(dialog, primaryLauncher);
+    });
 
     dialog.addEventListener("click", function (e) {
       var t = e.target;

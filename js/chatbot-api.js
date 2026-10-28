@@ -146,7 +146,7 @@
         },
         body: JSON.stringify({
           question: q,
-          top_k: 3,
+          top_k: 4,
           history: trimHistory(history),
         }),
         signal: controller ? controller.signal : undefined,
@@ -171,19 +171,34 @@
       throw new Error(mapHttpError(response.status, data, response));
     }
 
-    if (!data || typeof data !== "object" || typeof data.answer !== "string") {
+    if (!data || typeof data !== "object") {
       throw new Error("Received an unexpected response from the assistant.");
     }
 
-    var answer = String(data.answer || "").trim();
-    if (!answer) {
+    var redirectUrl = safeRedirect(data.redirect_url);
+    var answer = typeof data.answer === "string" ? String(data.answer).trim() : "";
+    if (!redirectUrl && !answer) {
       throw new Error("The assistant returned an empty reply. Please try again.");
     }
 
     return {
       answer: answer,
       sources: normalizeSources(data.sources),
+      redirectUrl: redirectUrl,
     };
+  }
+
+  function safeRedirect(url) {
+    var value = String(url || "").trim();
+    if (!value || value.indexOf("\\") !== -1) return "";
+    if (value.charAt(0) === "/" && value.charAt(1) !== "/") return value;
+    try {
+      var parsed = new URL(value);
+      if (parsed.protocol === "https:" || parsed.protocol === "http:") return parsed.href;
+    } catch (err) {
+      return "";
+    }
+    return "";
   }
 
   global.AAAMTChatAPI = {
