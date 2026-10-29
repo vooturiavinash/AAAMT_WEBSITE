@@ -68,7 +68,7 @@
       image: "assets/images/dr-meera-prakash.jpg",
       name: "Dr. Meera Prakash, Principal, Skyline Degree College",
       quote: "“Managing our entire college became effortless.”",
-      body: "Attendance, examinations, communication — everything is now streamlined. Our staff saves hours every day, and the dashboard gives complete visibility. This software has truly improved our operational efficiency."
+      body: "Attendance, examinations, communication - everything is now streamlined. Our staff saves hours every day, and the dashboard gives complete visibility. This software has truly improved our operational efficiency."
     }
   ];
 
