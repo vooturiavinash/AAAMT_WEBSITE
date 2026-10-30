@@ -1,12 +1,32 @@
 (function () {
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".site-nav");
+  var lockedScrollY = 0;
 
   function setNavOpen(open) {
     if (!nav || !toggle) return;
     nav.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     document.body.classList.toggle("nav-open", open);
+  }
+
+  function lockPageScroll() {
+    if (document.body.classList.contains("products-open")) return;
+    lockedScrollY = window.scrollY || window.pageYOffset || 0;
+    document.body.classList.add("products-open");
+    document.body.style.top = "-" + lockedScrollY + "px";
+  }
+
+  function unlockPageScroll() {
+    if (!document.body.classList.contains("products-open")) return;
+    document.body.classList.remove("products-open");
+    document.body.style.top = "";
+    window.scrollTo(0, lockedScrollY);
+  }
+
+  function setProductsOpen(open) {
+    if (open) lockPageScroll();
+    else unlockPageScroll();
   }
 
   function closeNav() {
@@ -19,6 +39,7 @@
       const button = drop.querySelector(".nav-drop-btn");
       if (button) button.setAttribute("aria-expanded", "false");
     });
+    setProductsOpen(false);
   }
 
   if (toggle && nav) {
@@ -38,9 +59,7 @@
       if (!drop || !button) return;
       drop.classList.add("is-open");
       button.setAttribute("aria-expanded", "true");
-      if (!link.closest(".site-footer")) {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      setProductsOpen(true);
     });
   });
 
@@ -50,6 +69,7 @@
       const drop = button.closest(".nav-drop");
       const open = drop.classList.toggle("is-open");
       button.setAttribute("aria-expanded", open ? "true" : "false");
+      setProductsOpen(open);
     });
   });
 
