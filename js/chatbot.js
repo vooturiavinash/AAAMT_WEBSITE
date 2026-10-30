@@ -6,12 +6,29 @@
 (function () {
   var DIALOG_ID = "aaamt-chat-dialog";
   var NEMO_AVATAR = "assets/images/nemo-avatar.jpeg";
+  /** Portable page path — works with static hosts and serve.js clean-URL redirects. */
   var CAREERS_URL = "careers.html";
+  var CHAT_WIDGET_SRC = "chat-widget/index.html?embed=1";
 
   var history = [];
   var pending = false;
   var lastFocus = null;
   var messageCount = 0;
+
+  /** Map clean paths like /careers → careers.html for hosts without rewrite rules. */
+  function portableHref(url) {
+    var value = String(url || "").trim();
+    if (!value) return value;
+    if (/^https?:\/\//i.test(value)) return value;
+    var path = value.split("?")[0].split("#")[0];
+    var extra = value.slice(path.length);
+    if (path === "/" || path === "") return "index.html" + extra;
+    var clean = path.replace(/^\//, "").replace(/\/$/, "");
+    if (!clean) return "index.html" + extra;
+    if (/\.html$/i.test(clean) || clean.indexOf(".") !== -1) return clean + extra;
+    if (clean === "privacy-policy") return "privacy-policy/index.html" + extra;
+    return clean + ".html" + extra;
+  }
 
   var SEND_ARROW =
     '<svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
@@ -34,7 +51,9 @@
     dialog.hidden = true;
 
     dialog.innerHTML =
-      '<iframe class="chatbot-embed" title="Nemo Virtual Assistant" src="chat-widget/index.html?embed=1"></iframe>';
+      '<iframe class="chatbot-embed" title="Nemo Virtual Assistant" src="' +
+      CHAT_WIDGET_SRC +
+      '"></iframe>';
 
     document.body.appendChild(dialog);
     return dialog;
@@ -244,7 +263,7 @@
     if (!q || pending) return;
 
     if (isCareersQuery(q)) {
-      window.location.assign(CAREERS_URL);
+      window.location.assign(portableHref(CAREERS_URL));
       return;
     }
 
@@ -264,7 +283,7 @@
       var result = await api.sendChatMessage(q, history);
       showTyping(dialog, false);
       if (result.redirectUrl) {
-        window.location.assign(result.redirectUrl);
+        window.location.assign(portableHref(result.redirectUrl));
         return;
       }
       appendMessage(dialog, "assistant", result.answer);
