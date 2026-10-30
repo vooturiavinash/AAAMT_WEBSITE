@@ -6,7 +6,7 @@
 (function () {
   var DIALOG_ID = "aaamt-chat-dialog";
   var NEMO_AVATAR = "assets/images/nemo-avatar.jpeg";
-  var CAREERS_URL = "/careers";
+  var CAREERS_URL = "careers.html";
 
   var history = [];
   var pending = false;
@@ -34,7 +34,7 @@
     dialog.hidden = true;
 
     dialog.innerHTML =
-      '<iframe class="chatbot-embed" title="Nemo Virtual Assistant" src="/chat-widget/index.html?embed=1"></iframe>';
+      '<iframe class="chatbot-embed" title="Nemo Virtual Assistant" src="chat-widget/index.html?embed=1"></iframe>';
 
     document.body.appendChild(dialog);
     return dialog;

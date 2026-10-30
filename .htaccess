@@ -26,9 +26,6 @@ RewriteRule ^privacy-policy$ /privacy-policy/ [R=301,L]
 # Directory index for /privacy-policy/
 DirectoryIndex index.html
 
-# Enquiry API proxy (PHP) — browser posts here; PHP calls communication.aaamt.in
-RewriteRule ^api/enquiry/?$ api/enquiry.php [L]
-
 # Serve extensionless paths as .html files when the file exists
 # (skip if a real directory exists, e.g. privacy-policy/)
 RewriteCond %{REQUEST_FILENAME} !-f

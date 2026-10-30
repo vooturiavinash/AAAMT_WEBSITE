@@ -5,17 +5,12 @@
    * - Contact (legacy): communication.aaamt.in demo-survey or local /api/enquiry proxy
    */
   var UPSTREAM = "https://communication.aaamt.in/api/Email/demo-survey";
-  var LOCAL_PROXY = "/api/enquiry";
   var PARTNERSHIP_ENDPOINT = "/api/partnership-enquiry";
-  var ENQUIRY_THANKS = "/enquiry-submitted";
+  var ENQUIRY_THANKS = "enquiry-submitted.html";
 
-  function isLocalHost() {
-    var h = location.hostname;
-    return h === "127.0.0.1" || h === "localhost" || h === "::1";
-  }
-
+  /** Contact form hits the live API so it works when the repo is copied to another PC. */
   function enquiryUrl() {
-    return isLocalHost() ? LOCAL_PROXY : UPSTREAM;
+    return UPSTREAM;
   }
 
   function fieldValue(form, selector) {
