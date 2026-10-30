@@ -551,18 +551,17 @@
   text-align: left;
 }
 .culture-copy .pill { margin: 0 0 20px; }
-/* Figma: OUR orange, CULTURE green */
 .culture-pill {
-  gap: 6px;
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
-.culture-pill-our {
-  color: #ff9900;
-}
-.culture-pill-rest {
-  color: #23b93e;
+.culture-pill .pill-text {
+  background-image: linear-gradient(90deg, #ff9900 0%, #197ae9 48%, #23b93e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 .culture-copy h2 {
   display: flex;

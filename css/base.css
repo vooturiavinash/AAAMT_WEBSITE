@@ -782,11 +782,40 @@ h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: 0; }
   }
 }
 
+/* Page-to-page opening effect.
+   Browsers with cross-document View Transitions (Chrome/Edge) smoothly
+   cross-fade the whole page on navigation while the sticky header stays put;
+   the rise-in on <main> below runs everywhere and supplies the motion. */
+@view-transition {
+  navigation: auto;
+}
+
+.site-header {
+  view-transition-name: site-header;
+}
+
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+::view-transition-old(root) {
+  animation: vt-fade-out 0.18s ease-out both;
+}
+::view-transition-new(root) {
+  animation: vt-fade-in 0.3s ease-out both;
+}
+
 /* Short page-open: content and images ease in together, no wait before they appear */
 @keyframes page-open {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -795,11 +824,15 @@ h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: 0; }
 }
 
 main {
-  animation: page-open 0.34s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: page-open 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   main {
+    animation: none;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
     animation: none;
   }
   .chatbot-float,
